@@ -1,5 +1,34 @@
+:root{
+    --fg: #019606;
+    --bg: #000;
+}
+
+
 * {
     margin : 0;
     padding: 0;
-    background: #000;
+    background: var(--bg);
+    color: var(--fg);
+}
+#main{
+    display:grid;
+    place-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+.omnit{
+    border: 6px solid var(--fg);
+    aspect-ratio:1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+    flex-direction:row;
+    position: relative;
+    overflow: hidden;
+}
+svg{
+    background : none;
+    position: absolute;
 }

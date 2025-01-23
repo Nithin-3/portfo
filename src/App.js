@@ -1,9 +1,9 @@
-
+import "./all.css"
+import Portfo from './portfo'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+            <Portfo/>
     </div>
   );
 }
