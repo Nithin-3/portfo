@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Main Item 1",
+    "description": "Description of main item 1",
+    "icon": "❂",
+    "branch": [
+      {
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
+      }
+    ]
+  },{
+    "title": "Main Item 2",
+    "description": "Description of main item 2",
+    "icon": "icon2.png",
+    "branch": [
+      {
+        "title": "Branch 2.1",
+        "description": "Description of branch 2.1",
+        "icon": "branch2.1.png"
+      }
+    ]
+  },
+  {
+    "title": "",
+    "description": "",
+    "icon": "",
+    "branch": [
+      {
+        "title": "",
+        "description": "",
+        "icon": ""
+      }
+    ]
+  }
+]
+
