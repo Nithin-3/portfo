@@ -26,6 +26,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     perspective: 500px;
 }
+
 .omnit{
     border: 20px solid var(--fg);
     aspect-ratio:1/1;
@@ -70,4 +71,11 @@ svg{
 }
 .random-div{
     opacity: 0.6;
+}
+.ausmuth{
+    background-color:#1e1e1e;
+    position: absolute;
+    top: 5vh;
+  right: 10vw;
+  background: none;
 }

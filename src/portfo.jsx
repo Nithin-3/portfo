@@ -87,6 +87,8 @@ export default function Portfo(){
     },[tog,disp])
     return(<div style={{height:`${data.length * 600}vh`}} id="scroll" >
         <div id="main" onClick={togelBranch}>
+            <div className="ausmuth" >
+            </div>
             <div className="omnit" id="omnit" style={{ height: `${dimensions}px` }} >
                 <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`,marginLeft:`${line * 0.3}px` }}>
                     <polygon
@@ -116,7 +118,6 @@ export default function Portfo(){
                     </div>
                 }
             </div>
-            
         </div>
     </div>)
 }
