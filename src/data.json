@@ -8,6 +8,18 @@
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
         "icon": "branch1.1.png"
+      },{
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
+      },{
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
+      },{
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
       }
     ]
   },{
@@ -23,14 +35,26 @@
     ]
   },
   {
-    "title": "",
-    "description": "",
-    "icon": "",
+    "title": "Main Item 1",
+    "description": "Description of main item 1",
+    "icon": "❂",
     "branch": [
       {
-        "title": "",
-        "description": "",
-        "icon": ""
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
+      },{
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
+      },{
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
+      },{
+        "title": "Branch 1.1",
+        "description": "Description of branch 1.1",
+        "icon": "branch1.1.png"
       }
     ]
   }

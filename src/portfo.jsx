@@ -23,11 +23,7 @@ export default function Portfo(){
             const scrollPercentage = Math.min(scrollPosition / scrollHeight, 1) * 100;
             const scrollPart = 100 / data.length;
             const changePercentage = (scrollPercentage%scrollPart) / scrollPart * 100
-            if(changePercentage < 51){
-                setmove(80 - ((changePercentage / 50) * 80))
-            }else{
-                setmove(((changePercentage - 50) / 50) * 80)
-            }
+            changePercentage < 51?setmove(80 - ((changePercentage / 50) * 80)):setmove(((changePercentage - 50) / 50) * 80);
             if(changePercentage > animRangeMin && changePercentage < animRangeMax){
                 changeAline(changePercentage);
             }
@@ -37,9 +33,9 @@ export default function Portfo(){
                     div.style.opacity = 0
                 })
             }
-            setdisp(data[Math.floor(scrollPercentage/scrollPart) >= data.length?data.length-1:Math.floor(scrollPercentage/scrollPart)])
-            if(scrollPercentage === 100)window.scrollTo(0,1);
-            if(scrollPercentage === 0)window.scrollTo(0,scrollHeight);
+            setdisp(data[Math.floor(scrollPercentage/scrollPart) >= data.length?data.length-1:Math.floor(scrollPercentage/scrollPart)]);
+            scrollPercentage === 100 && window.scrollTo(0,1);
+            scrollPercentage === 0 && window.scrollTo(0,scrollHeight);
         };
         handleResize()
         window.addEventListener('resize', handleResize);
@@ -63,65 +59,64 @@ export default function Portfo(){
 
     }
     const togelBranch = ()=>{
-
         settog(p=>{ 
             p && document.querySelectorAll(".random-div").forEach((div)=>{
-            div.style.opacity = 0
-        });
+                div.style.opacity = 0
+            });
             p || document.querySelectorAll(".random-div").forEach((div)=>{
-            div.style.opacity = 0.7
+                div.style.opacity = 0.7
+            });
+            !p ? document.getElementById("omnit").classList.add("select") : document.getElementById("omnit").classList.remove("select")
+            return !p;
         });
-            p || setRandomPosition();
-            return !p;});
     }
     const setRandomPosition = ()=>{
+        console.log("fsds")
         const divs = document.querySelectorAll('.random-div');
         const centerX = window.innerWidth / 2;
-        const leftLimit = centerX - dimensions / 2;
-        const rightLimit = centerX + dimensions / 2;
+        const centerY = window.innerHeight /2;
         divs.forEach(function(div) {
-            let randomX = Math.random(), randomY = Math.floor(Math.random() * (window.innerHeight - div.offsetHeight));
-            if (randomX < 0.5) {
-                randomX = randomX * leftLimit;     } else {
-                randomX = randomX * (window.innerWidth - rightLimit) + rightLimit - div.offsetWidth ; 
-            }
-            div.style.top = randomY + 'px';
-            div.style.left = randomX + 'px';
+            const circum = Math.PI * Math.random();
+            let distance = (dimensions * 0.4) + Math.random() * 100 + 50;
+            div.style.top = (centerY+distance * Math.cos(circum)) + 'px';
+            div.style.left = (centerX+distance * Math.sin(circum)) + 'px';
         });
     }
+    useEffect(()=>{
+        // tog && setRandomPosition();
+    },[tog,disp])
     return(<div style={{height:`${data.length * 600}vh`}} id="scroll" >
         <div id="main" onClick={togelBranch}>
-            <div className="omnit" style={{ height: `${dimensions}px` }} >
-        <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`,marginLeft:`${line * 0.3}px` }}>
-    {/* First diamond */}
-    <polygon
-      points={`${line * 0.2},0 ${line * 0.5},0 ${line},${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.2},${dimensions} ${line * 0.9},${dimensions * 0.5}`}
-      fill={color} // The color you want to fill the diamond with
-    />
-  </svg>
+            <div className="omnit" id="omnit" style={{ height: `${dimensions}px` }} >
+                <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`,marginLeft:`${line * 0.3}px` }}>
+                    <polygon
+                        points={`${line * 0.2},0 ${line * 0.5},0 ${line},${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.2},${dimensions} ${line * 0.9},${dimensions * 0.5}`}
+                        fill={color}
+                    />
+                </svg>
 
-  <svg width={line} height={dimensions} style={{ transform: `translateX(${move}%)`,marginRight:`${line *0.3}px` }}>
-    {/* Second diamond */}
-    <polygon
-      points={`${line * 0.8},0 ${line * 0.5 },0 0,${dimensions * 0.5} ${line * 0.5},${dimensions}  ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`}
-      fill={color} // The color you want to fill the diamond with
-    />
-  </svg>
+                <svg width={line} height={dimensions} style={{ transform: `translateX(${move}%)`,marginRight:`${line *0.3}px` }}>
+                    <polygon
+                        points={`${line * 0.8},0 ${line * 0.5 },0 0,${dimensions * 0.5} ${line * 0.5},${dimensions}  ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`}
+                        fill={color}
+                    />
+                </svg>
             </div>
             <div className="aline" id="aline">
-                <div>
-                    <span>{disp?.icon}</span>
-                    <h2>{disp?.title}</h2>
-                    <p>{disp?.description}</p>
-                </div>
+                {tog?disp?.branch.map((e,i) => (
+                    <div className="random-div" key={i}>
+                        <span>{e.icon}</span>
+                        <h2>{e.title}</h2>
+                        <p>{e.description}</p>
+                    </div>
+                )): <div>
+                        <span>{disp?.icon}</span>
+                        <h2>{disp?.title}</h2>
+                        <p>{disp?.description}</p>
+                    </div>
+                }
             </div>
-            {disp?.branch.map((e,i) => (
-                <div className="random-div" key={i}>
-                    <span>{e.icon}</span>
-                    <h2>{e.title}</h2>
-                    <p>{e.description}</p>
-                </div>
-            )) }
+            
         </div>
     </div>)
 }
