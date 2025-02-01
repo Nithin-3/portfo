@@ -1,13 +1,12 @@
 :root{
     --fg: #019606;
     --bg: #000;
+    --data-hei:20vh;
 }
-/* Hide scrollbars in Firefox */
 body {
-    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+    scrollbar-width: none;
 }
 
-/* Hide scrollbar in Webkit browsers (Chrome, Safari) */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -24,7 +23,8 @@ body::-webkit-scrollbar {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    perspective: 500px;
+    /* transform-origin: center; */
+    perspective: 1000px;
 }
 
 .omnit{
@@ -54,10 +54,8 @@ svg{
     background: none;
 }
 .aline > div{
-    background : none;
     margin: 20px;
-    /* aspect-ratio:1/1; */
-    /* padding:40px; */
+    background-size:contain;
 }
 .aline span {
     font-size:2rem;
@@ -67,15 +65,43 @@ svg{
     filter: drop-shadow(0 0 10px var(--fg) );
 }
 .select{
-    transform: rotateX(85deg) translateY(60%) scale(0.2);
+    transform: rotateX(85deg) translateZ(calc(-1 * var(--dim))) ;
 }
 .random-div{
     opacity: 0.6;
 }
-.ausmuth{
-    background-color:#1e1e1e;
+.azmuth{
     position: absolute;
     top: 5vh;
-  right: 10vw;
-  background: none;
+    right: 0;
+    background: none;
+}
+.azmuth span {
+    cursor: pointer;
+    position: absolute;
+    right: 5vw;
+    height: 20px;
+    width: 20px;
+}
+.det{
+    position: absolute;
+    top: var(--data-hei);
+    left: calc((-1.4*var(--data-hei))/2);
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap:21px;
+    padding:20px;
+    width:calc(1.4 * var(--data-hei));
+    overflow: auto;
+    transform : rotate(-90deg) ;
+    transform-origin: 50% calc(-1 * var(--data-hei));
+    transition:transform 400ms ease-out;
+}
+.det.open{
+    transform:rotate(45deg) ;
+}
+.open > div {
+    transform:rotate(-45deg);
+    cursor: pointer;
 }

@@ -1,60 +1,60 @@
 [
   {
-    "title": "Main Item 1",
-    "description": "Description of main item 1",
-    "icon": "❂",
+    "title": "About Me:",
+    "description": "Hi, I'm Ninja — a B.Tech student specializing in Artificial Intelligence and Machine Learning with a passion for open-source technologies. I'm a Linux enthusiast",
+    "icon": "./ben.svg",
     "branch": [
       {
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       },{
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       },{
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       },{
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       }
     ]
   },{
     "title": "Main Item 2",
     "description": "Description of main item 2",
-    "icon": "icon2.png",
+    "icon": "./ben.svg",
     "branch": [
       {
         "title": "Branch 2.1",
         "description": "Description of branch 2.1",
-        "icon": "branch2.1.png"
+        "icon": "./ben.svg"
       }
     ]
   },
   {
     "title": "Main Item 1",
     "description": "Description of main item 1",
-    "icon": "❂",
+    "icon": "./ben.svg",
     "branch": [
       {
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       },{
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       },{
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       },{
         "title": "Branch 1.1",
         "description": "Description of branch 1.1",
-        "icon": "branch1.1.png"
+        "icon": "./ben.svg"
       }
     ]
   }

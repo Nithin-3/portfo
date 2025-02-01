@@ -1,20 +1,23 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,} from 'react'
 import data from './data.json'
+import {ReactComponent as Azmuth} from './image2vector.svg'
 export default function Portfo(){
     const [dimensions, setDimensions] = useState(0);
     const [tog,settog] = useState(false);
     const [line,setline] = useState(0);
     const [move,setmove] = useState(80);
+    const [vis,setvis] = useState(false);
     const color ="#019606"
     const [disp,setdisp] = useState(null);
     const animRangeMin = 30
     const animRangeMax = 70
     useEffect(() => {
         const handleResize = () => {
-            const max = Math.max(window.innerWidth,window.innerHeight)*0.4;
-            const set = max < Math.min(window.innerWidth,window.innerHeight)?max:Math.min(window.innerWidth,window.innerHeight)*0.4
+            const set = Math.min(window.innerWidth,window.innerHeight)*0.4
             setDimensions(set);
             setline(set/2);
+            document.documentElement.style.setProperty("--dim",`${window.innerHeight/2 - set/2}px`)
+            
 
         };
         const handleScroll = () => {
@@ -87,7 +90,39 @@ export default function Portfo(){
     },[tog,disp])
     return(<div style={{height:`${data.length * 600}vh`}} id="scroll" >
         <div id="main" onClick={togelBranch}>
-            <div className="ausmuth" >
+            <div className="azmuth" >
+                <span onClick={()=>{setvis(p=>!p)}}>
+                    <Azmuth height={`${dimensions*0.2}px`} width={`${dimensions*0.2}px`} />
+                </span>
+                <div className={`det ${vis?"open":''}`} >
+                    <div>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    </div>
+
+                    <div>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    </div>
+                    <div>
+                    <p>fggfdfg</p>
+
+                    <p>vfdf</p>
+                    <p>vfdf</p>
+                    </div>
+                    <div>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    </div>
+                    <div>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    <p>cccccoooo1</p>
+                    </div>
+                </div>
             </div>
             <div className="omnit" id="omnit" style={{ height: `${dimensions}px` }} >
                 <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`,marginLeft:`${line * 0.3}px` }}>
@@ -98,21 +133,16 @@ export default function Portfo(){
                 </svg>
 
                 <svg width={line} height={dimensions} style={{ transform: `translateX(${move}%)`,marginRight:`${line *0.3}px` }}>
-                    <polygon
-                        points={`${line * 0.8},0 ${line * 0.5 },0 0,${dimensions * 0.5} ${line * 0.5},${dimensions}  ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`}
-                        fill={color}
-                    />
+                    <polygon points={`${line * 0.8},0 ${line * 0.5 },0 0,${dimensions * 0.5} ${line * 0.5},${dimensions}  ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`} fill={color} />
                 </svg>
             </div>
             <div className="aline" id="aline">
                 {tog?disp?.branch.map((e,i) => (
-                    <div className="random-div" key={i}>
-                        <span>{e.icon}</span>
+                    <div className="random-div" key={i} style={{background:`url(${e.icon}) center no-repeat`,backgroundSize:'contain'}}>
                         <h2>{e.title}</h2>
                         <p>{e.description}</p>
                     </div>
-                )): <div>
-                        <span>{disp?.icon}</span>
+                )): <div style={{background:`url(${disp?.icon}) center no-repeat`,backgroundSize:'contain',maxWidth:`${dimensions+50}px`}}>
                         <h2>{disp?.title}</h2>
                         <p>{disp?.description}</p>
                     </div>
@@ -121,14 +151,3 @@ export default function Portfo(){
         </div>
     </div>)
 }
-//!
-    //<div className="omnit" style={{ height: ${dimensions}px }} >
-//<svg width={line} height={dimensions} style={{transform: translateX(-${move}%)}} >
-//                <line x1={line * 0.5} y1="0" x2={line} y2={line} stroke={color} strokeWidth={tick} />
-//                 <line x1={line * 0.5} y1={dimensions} x2={line} y2={line} stroke={color} strokeWidth={tick}/>
-//              </svg>
-//               <svg width={line} height={dimensions} style={{transform: translateX(${move}%)}} >
-//                <line x1={line * 0.5} y1="0" x2="0" y2={line} stroke={color} strokeWidth={tick} />
-//                   <line x1={line * 0.5} y1={dimensions} x2="0" y2={line} stroke={color} strokeWidth={tick} />
-//              </svg>
-//     </div>
