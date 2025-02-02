@@ -1,10 +1,16 @@
 import "./all.css"
+import {BrowserRouter as Rout , Routes,Route} from 'react-router-dom'
 import Portfo from './portfo'
+import GalvanBase from './galvanBase'
 function App() {
   return (
-    <div className="App">
-            <Portfo/>
-    </div>
+        <Rout>
+            <Routes>
+                <Route path='/' element={<Portfo/>}/>
+                <Route path='galvanBase' element={<GalvanBase/>}/>
+                <Route path='*' element={<Portfo/>}/>
+            </Routes>
+        </Rout>
   );
 }
 

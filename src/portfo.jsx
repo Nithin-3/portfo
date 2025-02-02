@@ -1,4 +1,5 @@
 import React,{useState,useEffect,} from 'react'
+import {useNavigate} from 'react-router-dom'    
 import data from './data.json'
 import {ReactComponent as Azmuth} from './image2vector.svg'
 export default function Portfo(){
@@ -7,10 +8,11 @@ export default function Portfo(){
     const [line,setline] = useState(0);
     const [move,setmove] = useState(80);
     const [vis,setvis] = useState(false);
-    const color ="#019606"
+    const color ="#019606";
     const [disp,setdisp] = useState(null);
-    const animRangeMin = 30
-    const animRangeMax = 70
+    const animRangeMin = 30;
+    const animRangeMax = 70;
+    const nav = useNavigate();
     useEffect(() => {
         const handleResize = () => {
             const set = Math.min(window.innerWidth,window.innerHeight)*0.4
@@ -95,32 +97,16 @@ export default function Portfo(){
                     <Azmuth height={`${dimensions*0.2}px`} width={`${dimensions*0.2}px`} />
                 </span>
                 <div className={`det ${vis?"open":''}`} >
-                    <div>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
-                    </div>
-
-                    <div>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
+                    <div onClick={()=>{nav('galvanBase')}}>
+                        <p>Galvan Base</p>
                     </div>
                     <div>
-                    <p>fggfdfg</p>
-
-                    <p>vfdf</p>
-                    <p>vfdf</p>
-                    </div>
-                    <div>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
-                    </div>
-                    <div>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
-                    <p>cccccoooo1</p>
+                        <p>Reach Out</p>
+                        <div className="dropdown">
+                            <a href="mailto:nithin3deve@gmail.com">󰆎&nbsp;nithin3dev@gmail.com</a><br/>
+                            <a href="tel:+917639824119"> +91 7639824119</a><br/>
+                            <a href="https://github.com/Nithin-3" target="_blank" rel="noopener noreferrer"> Github Profile</a>
+                        </div>
                     </div>
                 </div>
             </div>

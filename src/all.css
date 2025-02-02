@@ -3,6 +3,12 @@
     --bg: #000;
     --data-hei:20vh;
 }
+@font-face {
+  font-family: "NerdFont";
+  src: url("ArimoNerdFontPropo-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
     scrollbar-width: none;
 }
@@ -16,6 +22,8 @@ body::-webkit-scrollbar {
     padding: 0;
     background: var(--bg);
     color: var(--fg);
+    text-decoration: none;
+    font-family:"NerdFont";
 }
 #main{
     display:grid;
@@ -86,22 +94,40 @@ svg{
 .det{
     position: absolute;
     top: var(--data-hei);
-    left: calc((-1.4*var(--data-hei))/2);
+    width:calc(1.4 * var(--data-hei));
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    gap:21px;
-    padding:20px;
-    width:calc(1.4 * var(--data-hei));
-    overflow: auto;
+    left: calc((-1.4*var(--data-hei))/2);
+    overflow: visible;
+    opacity: 0;
     transform : rotate(-90deg) ;
     transform-origin: 50% calc(-1 * var(--data-hei));
-    transition:transform 400ms ease-out;
+    transition:transform 400ms ease-out,opacity 600ms ease-in;
 }
 .det.open{
+    opacity: 1;
     transform:rotate(45deg) ;
 }
 .open > div {
+    margin: 10px;
     transform:rotate(-45deg);
     cursor: pointer;
+}
+/* galvan base */
+.base-root {
+    padding-top: 5vh;
+}
+.base-root span{
+    position: sticky;
+    top: 5vh;
+    left: 1vh;
+    cursor: pointer;
+}
+.base-root > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    padding: 2vw;
+
 }
