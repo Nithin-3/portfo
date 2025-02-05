@@ -25,13 +25,13 @@ body::-webkit-scrollbar {
     text-decoration: none;
     font-family:"NerdFont";
 }
+
 #main{
     display:grid;
     place-items: center;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    /* transform-origin: center; */
     perspective: 1000px;
 }
 
@@ -53,7 +53,6 @@ svg{
 }
 .aline{
     position:absolute;
-    /* aspect-ratio:1/1; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -63,14 +62,13 @@ svg{
 }
 .aline > div{
     margin: 20px;
-    background-size:contain;
 }
 .aline span {
     font-size:2rem;
 }
 .aline *{
     background:none;
-    filter: drop-shadow(0 0 10px var(--fg) );
+    filter: drop-shadow(0 0 20px var(--fg) );
 }
 .select{
     transform: rotateX(85deg) translateZ(calc(-1 * var(--dim))) ;
@@ -90,6 +88,7 @@ svg{
     right: 5vw;
     height: 20px;
     width: 20px;
+    background: none;
 }
 .det{
     position: absolute;
@@ -130,4 +129,7 @@ svg{
     flex-wrap:wrap;
     padding: 2vw;
 
+}
+.det > div > div {
+    margin-top:0.4rem;
 }

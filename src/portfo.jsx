@@ -75,25 +75,11 @@ export default function Portfo(){
             return !p;
         });
     }
-    const setRandomPosition = ()=>{
-        console.log("fsds")
-        const divs = document.querySelectorAll('.random-div');
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight /2;
-        divs.forEach(function(div) {
-            const circum = Math.PI * Math.random();
-            let distance = (dimensions * 0.4) + Math.random() * 100 + 50;
-            div.style.top = (centerY+distance * Math.cos(circum)) + 'px';
-            div.style.left = (centerX+distance * Math.sin(circum)) + 'px';
-        });
-    }
-    useEffect(()=>{
-        // tog && setRandomPosition();
-    },[tog,disp])
+    
     return(<div style={{height:`${data.length * 600}vh`}} id="scroll" >
         <div id="main" onClick={togelBranch}>
             <div className="azmuth" >
-                <span onClick={()=>{setvis(p=>!p)}}>
+                <span onClick={(e)=>{e.stopPropagation();setvis(p=>!p)}}>
                     <Azmuth height={`${dimensions*0.2}px`} width={`${dimensions*0.2}px`} />
                 </span>
                 <div className={`det ${vis?"open":''}`} >
@@ -124,11 +110,11 @@ export default function Portfo(){
             </div>
             <div className="aline" id="aline">
                 {tog?disp?.branch.map((e,i) => (
-                    <div className="random-div" key={i} style={{background:`url(${e.icon}) center no-repeat`,backgroundSize:'contain'}}>
+                    <div className="random-div" key={i} style={{background:`url(${e.icon}) no-repeat center/contain`}}>
                         <h2>{e.title}</h2>
                         <p>{e.description}</p>
                     </div>
-                )): <div style={{background:`url(${disp?.icon}) center no-repeat`,backgroundSize:'contain',maxWidth:`${dimensions+50}px`}}>
+                )): <div style={{background:`url(${disp?.icon}) no-repeat center/contain`,maxWidth:`${dimensions+50}px`}}>
                         <h2>{disp?.title}</h2>
                         <p>{disp?.description}</p>
                     </div>
