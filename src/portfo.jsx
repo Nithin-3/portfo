@@ -8,7 +8,7 @@ export default function Portfo(){
     const [line,setline] = useState(0);
     const [move,setmove] = useState(80);
     const [vis,setvis] = useState(false);
-    const color ="#019606";
+    const color = getComputedStyle(document.documentElement).getPropertyValue('--fgD1');
     const [disp,setdisp] = useState(null);
     const animRangeMin = 30;
     const animRangeMax = 70;
@@ -19,7 +19,7 @@ export default function Portfo(){
             setDimensions(set);
             setline(set/2);
             document.documentElement.style.setProperty("--dim",`${window.innerHeight/2 - set/2}px`)
-            
+
 
         };
         const handleScroll = () => {
@@ -39,8 +39,8 @@ export default function Portfo(){
                 })
             }
             setdisp(data[Math.floor(scrollPercentage/scrollPart) >= data.length?data.length-1:Math.floor(scrollPercentage/scrollPart)]);
-            scrollPercentage === 100 && window.scrollTo(0,1);
-            scrollPercentage === 0 && window.scrollTo(0,scrollHeight);
+            scrollPercentage > 99 && window.scrollTo(0,scrollHeight*0.01);
+            scrollPercentage === 0 && window.scrollTo(0,scrollHeight*0.99);
         };
         handleResize()
         window.addEventListener('resize', handleResize);
@@ -60,7 +60,7 @@ export default function Portfo(){
             })
             return p;
         })
-       
+
 
     }
     const togelBranch = ()=>{
@@ -75,7 +75,7 @@ export default function Portfo(){
             return !p;
         });
     }
-    
+
     return(<div style={{height:`${data.length * 600}vh`}} id="scroll" >
         <div id="main" onClick={togelBranch}>
             <div className="azmuth" >
@@ -110,13 +110,13 @@ export default function Portfo(){
             </div>
             <div className="aline" id="aline">
                 {tog?disp?.branch.map((e,i) => (
-                    <div className="random-div" key={i} style={{background:`url(${e.icon}) no-repeat center/contain`}}>
+                    <div className="random-div" key={i} style={{background:`url(${e.icon}) no-repeat center/contain`,maxWidth:`${dimensions+60}px`}}>
                         <h2>{e.title}</h2>
-                        <p>{e.description}</p>
+                        {e.description.split('\n').map((t,i) => <p key={i}>{t}</p>)}
                     </div>
                 )): <div style={{background:`url(${disp?.icon}) no-repeat center/contain`,maxWidth:`${dimensions+50}px`}}>
                         <h2>{disp?.title}</h2>
-                        <p>{disp?.description}</p>
+                        {disp?.description.split('\n').map((t,i) => <p key={i}>{t}</p>)}
                     </div>
                 }
             </div>

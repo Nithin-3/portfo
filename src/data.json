@@ -1,7 +1,34 @@
 [
   {
-    "title": "About Me:",
-    "description": "Hi, I'm Ninja — a B.Tech student specializing in Artificial Intelligence and Machine Learning with a passion for open-source technologies. I'm a Linux enthusiast",
+    "title": "HI, I'm Nithin",
+    "description": "Passionate developer skilled in React Native, MERN Stack, and game development with experience in Godot and Unity.\nCurrently pursuing a B.Tech in Artificial Intelligence and Machine Learning, with an interest in open-source contributions. Focused on developing innovative solutions with a deep love for coding.",
+    "icon": "./ben.svg",
+    "branch": [
+      {
+        "title": "Dev",
+        "description": "I am a mobile app, web, and game developer with a strong foundation in React Native, MERN stack, and Unity/Godot",
+        "icon": "./ben.svg"
+      },{
+        "title": "AI",
+        "description": "I am always looking for new challenges and opportunities to learn, with a particular interest in AI and machine learning",
+        "icon": "./ben.svg"
+      }
+    ]
+  },{
+    "title": "App Development",
+    "description": "Description of main item 2",
+    "icon": "./ben.svg",
+    "branch": [
+      {
+        "title": "Web Development",
+        "description": "Description of branch 2.1",
+        "icon": "./ben.svg"
+      }
+    ]
+  },
+  {
+    "title": "Web Development",
+    "description": "Description of main item 1",
     "icon": "./ben.svg",
     "branch": [
       {
@@ -23,37 +50,24 @@
       }
     ]
   },{
-    "title": "Main Item 2",
+    "title": "Game Development",
     "description": "Description of main item 2",
     "icon": "./ben.svg",
     "branch": [
       {
-        "title": "Branch 2.1",
+        "title": "Web Development",
         "description": "Description of branch 2.1",
         "icon": "./ben.svg"
       }
     ]
-  },
-  {
-    "title": "Main Item 1",
-    "description": "Description of main item 1",
+  },{
+    "title": "AI/ML",
+    "description": "Description of main item 2",
     "icon": "./ben.svg",
     "branch": [
       {
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
-        "icon": "./ben.svg"
-      },{
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
-        "icon": "./ben.svg"
-      },{
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
-        "icon": "./ben.svg"
-      },{
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
+        "title": "Web Development",
+        "description": "Description of branch 2.1",
         "icon": "./ben.svg"
       }
     ]

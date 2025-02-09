@@ -1,5 +1,9 @@
 :root{
     --fg: #019606;
+    --fgD1 : #007a04;
+    --fgD2 : #004f03;
+    --fgL1 : #2abf2a;
+    --fgL2 : #66D866;
     --bg: #000;
     --data-hei:20vh;
 }
@@ -21,11 +25,10 @@ body::-webkit-scrollbar {
     margin : 0;
     padding: 0;
     background: var(--bg);
-    color: var(--fg);
+    color: var(--fgL2);
     text-decoration: none;
     font-family:"NerdFont";
 }
-
 #main{
     display:grid;
     place-items: center;
@@ -36,7 +39,7 @@ body::-webkit-scrollbar {
 }
 
 .omnit{
-    border: 20px solid var(--fg);
+    border: 20px solid var(--fgD1);
     aspect-ratio:1/1;
     border-radius: 50%;
     display: flex;
@@ -46,6 +49,7 @@ body::-webkit-scrollbar {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
+    box-shadow:none;
 }
 svg{
     background : none;
@@ -68,7 +72,7 @@ svg{
 }
 .aline *{
     background:none;
-    filter: drop-shadow(0 0 20px var(--fg) );
+    filter: drop-shadow(0 0 50px var(--fgL2) );
 }
 .select{
     transform: rotateX(85deg) translateZ(calc(-1 * var(--dim))) ;
@@ -113,6 +117,10 @@ svg{
     transform:rotate(-45deg);
     cursor: pointer;
 }
+
+h2{
+    text-align:center;
+}
 /* galvan base */
 .base-root {
     padding-top: 5vh;
@@ -132,4 +140,9 @@ svg{
 }
 .det > div > div {
     margin-top:0.4rem;
+}
+@media(prefers-color-scheme: dark){
+    svg{
+        /* color : var(--fgD1); */
+    }
 }
