@@ -76,7 +76,7 @@ export default function Portfo(){
         });
     }
 
-    return(<div style={{height:`${data.length * 600}vh`}} id="scroll" >
+    return(<div style={{height:`${data.length * 600}vh`}} id="scroll" className='scroll'>
         <div id="main" onClick={togelBranch}>
             <div className="azmuth" >
                 <span onClick={(e)=>{e.stopPropagation();setvis(p=>!p)}}>

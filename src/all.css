@@ -13,14 +13,14 @@
   font-weight: normal;
   font-style: normal;
 }
-body {
-    scrollbar-width: none;
+
+html, body {
+    -ms-overflow-style: none;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     display: none;
 }
-
 * {
     margin : 0;
     padding: 0;
@@ -28,6 +28,7 @@ body::-webkit-scrollbar {
     color: var(--fgL2);
     text-decoration: none;
     font-family:"NerdFont";
+    scrollbar-width: none;
 }
 #main{
     display:grid;
@@ -118,7 +119,7 @@ svg{
     cursor: pointer;
 }
 
-h2{
+h2,p{
     text-align:center;
 }
 /* galvan base */

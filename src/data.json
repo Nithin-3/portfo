@@ -1,74 +1,60 @@
 [
   {
-    "title": "HI, I'm Nithin",
-    "description": "Passionate developer skilled in React Native, MERN Stack, and game development with experience in Godot and Unity.\nCurrently pursuing a B.Tech in Artificial Intelligence and Machine Learning, with an interest in open-source contributions. Focused on developing innovative solutions with a deep love for coding.",
-    "icon": "./ben.svg",
+    "title": "Hi, I'm Nithin",
+    "description": "Passionate developer skilled in React Native, MERN Stack, and game development with experience in Godot and Unity. Currently pursuing a B.Tech in Artificial Intelligence and Machine Learning, with an interest in open-source contributions. Focused on developing innovative solutions with a deep love for coding.",
+    "icon": "./nithin.svg",
     "branch": [
-      {
-        "title": "Dev",
-        "description": "I am a mobile app, web, and game developer with a strong foundation in React Native, MERN stack, and Unity/Godot",
-        "icon": "./ben.svg"
-      },{
-        "title": "AI",
-        "description": "I am always looking for new challenges and opportunities to learn, with a particular interest in AI and machine learning",
-        "icon": "./ben.svg"
-      }
+      
     ]
   },{
-    "title": "App Development",
-    "description": "Description of main item 2",
-    "icon": "./ben.svg",
-    "branch": [
+        "title": "App Development",
+        "description": "I can develop mobile apps using React Native with Expo, building cross-platform applications with a seamless user experience.",
+        "icon": "./app-dev.svg",
+        "branch":[
+        ]
+      },
       {
         "title": "Web Development",
-        "description": "Description of branch 2.1",
-        "icon": "./ben.svg"
+        "description": "Experienced in building web applications using the MERN stack, with a focus on creating efficient, scalable, and responsive applications.",
+        "icon": "./web-dev.svg",
+        "branch":[
+        ]
+      },
+      {
+        "title": "Game Development",
+        "description": "Skilled in developing games using Godot and Unity, with experience in both 2D and 3D game development for different platforms.",
+        "icon": "./game-dev.svg",
+        "branch":[
+        ]
+      },
+      {
+        "title": "AI/ML",
+        "description": "Currently pursuing a B.Tech in AI and ML, eager to explore cutting-edge technologies and contribute to AI-driven projects.",
+        "icon": "./ai-ml.svg",
+        "branch":[
+        ]
+      },
+  {
+    "title": "Open Source Contributions",
+    "description": "I am passionate about contributing to open-source projects and sharing knowledge with the community.",
+    "icon": "./opensource.svg",
+    "branch": [
+      {
+        "title": "Contributions",
+        "description": "Active contributions to various open-source repositories, focusing on improving code, fixing bugs, and developing new features.",
+        "icon": "./contrib.svg"
       }
     ]
   },
   {
-    "title": "Web Development",
-    "description": "Description of main item 1",
-    "icon": "./ben.svg",
+    "title": "Education",
+    "description": "Currently pursuing a B.Tech in Artificial Intelligence and Machine Learning, constantly learning and exploring new AI technologies.",
+    "icon": "./education.svg",
     "branch": [
       {
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
-        "icon": "./ben.svg"
-      },{
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
-        "icon": "./ben.svg"
-      },{
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
-        "icon": "./ben.svg"
-      },{
-        "title": "Branch 1.1",
-        "description": "Description of branch 1.1",
-        "icon": "./ben.svg"
-      }
-    ]
-  },{
-    "title": "Game Development",
-    "description": "Description of main item 2",
-    "icon": "./ben.svg",
-    "branch": [
-      {
-        "title": "Web Development",
-        "description": "Description of branch 2.1",
-        "icon": "./ben.svg"
-      }
-    ]
-  },{
-    "title": "AI/ML",
-    "description": "Description of main item 2",
-    "icon": "./ben.svg",
-    "branch": [
-      {
-        "title": "Web Development",
-        "description": "Description of branch 2.1",
-        "icon": "./ben.svg"
+        "title": "AI/ML Focus",
+        "description": "Focused on deepening my understanding of artificial intelligence, machine learning, and data science.",
+        "icon": "./ai-focus.svg"
       }
     ]
   }
