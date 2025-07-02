@@ -15,7 +15,7 @@ export default function Portfo(){
     const nav = useNavigate();
     useEffect(() => {
         const handleResize = () => {
-            const set = Math.min(window.innerWidth,window.innerHeight)*0.4
+            const set = Math.min(window.innerWidth,window.innerHeight)*0.6
             setDimensions(set);
             setline(set/2);
             document.documentElement.style.setProperty("--dim",`${window.innerHeight/2 - set/2}px`)
@@ -96,23 +96,27 @@ export default function Portfo(){
                     </div>
                 </div>
             </div>
-            <div className="omnit" id="omnit" style={{ height: `${dimensions}px` }} >
+            <div id="omnit" style={{height:`${dimensions*1.7}px`}}>
+                <div className='omni-bg' style={{position:'absolute',height:'100%',width:'100%'}}>
+                </div>
+            <div className="omnit" style={{height:`${dimensions*0.9}px`}}>
                 <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`,marginLeft:`${line * 0.3}px` }}>
                     <polygon
                         points={`${line * 0.2},0 ${line * 0.5},0 ${line},${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.2},${dimensions} ${line * 0.9},${dimensions * 0.5}`}
                         fill={color}
                     />
                 </svg>
-
                 <svg width={line} height={dimensions} style={{ transform: `translateX(${move}%)`,marginRight:`${line *0.3}px` }}>
                     <polygon points={`${line * 0.8},0 ${line * 0.5 },0 0,${dimensions * 0.5} ${line * 0.5},${dimensions}  ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`} fill={color} />
                 </svg>
+            </div>
             </div>
             <div className="aline" id="aline">
                 {tog?disp?.branch.map((e,i) => (
                     <div className="random-div" key={i} style={{background:`url(${e.icon}) no-repeat center/contain`,maxWidth:`${dimensions+60}px`}}>
                         <h2>{e.title}</h2>
                         {e.description.split('\n').map((t,i) => <p key={i}>{t}</p>)}
+                        {e.link && <a href={e.link} target='_blank'rel='noreferrer' >{e.linkTitle || e.link}</a>}
                     </div>
                 )): <div style={{background:`url(${disp?.icon}) no-repeat center/contain`,maxWidth:`${dimensions+50}px`}}>
                         <h2>{disp?.title}</h2>

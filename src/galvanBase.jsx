@@ -2,15 +2,15 @@ import React from 'react'
 import {useNavigate} from 'react-router-dom'
 export default function GalvanBase(){
     const nav = useNavigate();
-    const images = require.context('../public/img', false, /\.(jpg|jpeg|png|gif)$/);
-    console.log(images.keys());
+    const images = require.context('../public/galven/', false, /\.(jpg|jpeg|png|gif|svg)$/);
+    const color = getComputedStyle(document.documentElement).getPropertyValue('--fgD1');
+    const width = Math.min(window.innerWidth,window.innerHeight)*0.6
     return (<div className="base-root">
-        <span onClick={()=>{nav('/')}} >〉〈</span>
-        <div>
-            <div>
-                <div>img</div>
-                <p>󰖋</p>
-            </div>
+        <span onClick={()=>{nav('/')}} > &nbsp;&nbsp;&nbsp;
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill={color}><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+</span>
+        <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',gap:20}}>
+            {images.keys().map((v,i)=><div key={i} style={{background:`url(./galven/${v}) no-repeat center/contain`,aspectRatio:1,width}}></div>)}
         </div>
     </div>)
 }
