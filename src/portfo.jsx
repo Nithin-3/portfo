@@ -1,8 +1,8 @@
-import React,{useState,useEffect,} from 'react'
+import React,{useState,useEffect, useLayoutEffect,} from 'react'
 import {useNavigate} from 'react-router-dom'    
-import data from './data.json'
 import {ReactComponent as Azmuth} from './image2vector.svg'
 export default function Portfo(){
+    const [data,sdata] = useState([])
     const [dimensions, setDimensions] = useState(0);
     const [tog,settog] = useState(false);
     const [line,setline] = useState(0);
@@ -13,6 +13,13 @@ export default function Portfo(){
     const animRangeMin = 30;
     const animRangeMax = 70;
     const nav = useNavigate();
+    useLayoutEffect(() => {
+        fetch('/data.json')
+            .then((res) => res.json())
+            .then((jsonData) => {
+                sdata(jsonData)
+            });
+    }, []);
     useEffect(() => {
         const handleResize = () => {
             const set = Math.min(window.innerWidth,window.innerHeight)*0.6
@@ -49,7 +56,7 @@ export default function Portfo(){
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [data]);
     const changeAline = (val)=>{
         const normalizedValue = (val - 50) / 20; // ==> -1 -> 0 -> 1 
         const fuzzy = Math.min(1- Math.pow(normalizedValue,2)+0.5,0.95); // curve
