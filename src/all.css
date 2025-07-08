@@ -160,8 +160,24 @@ h2,p{
 .det > div > div {
     margin-top:0.4rem;
 }
-@media(prefers-color-scheme: dark){
-    svg{
-        /* color : var(--fgD1); */
-    }
+.galven-data {
+    display: grid;
+    place-items: end;
+    overflow: hidden;
+    position: relative;
 }
+
+.galven-data > p {
+    padding: 0.7rem;
+    background: linear-gradient(to bottom, transparent, #000000);
+    transform: translateY(20px);
+    opacity : 0;
+    transition: opacity .4s ease, transform 0.4s ease;
+}
+
+.galven-data:hover > p {
+    opacity : 1;
+    transform: translateY(0);
+    transition: opacity 1.6s ease, transform 0.4s ease;
+}
+
