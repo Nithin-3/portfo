@@ -1,0 +1,109 @@
+[
+    {
+        "title": "Hi, I'm Nithin",
+        "description": "A developer passionate about building apps, games, and web experiences using React Native, MERN stack, Unity, and Godot. I completed my B.Tech in Artificial Intelligence & Machine Learning, and I love solving real-world problems through code.",
+        "icon": "./svg/ben.svg",
+        "branch": [
+
+            {
+                "title": "Linux & Systems",
+                "description": "Comfortable working in Linux environments. I enjoy customizing my development tools, using terminal-based workflows, and diving into system-level problem solving.",
+                "icon": "./svg/linux.svg"
+            },
+            {
+                "title": "Physics Engine Learning",
+                "description": "Currently learning and experimenting with physics engines by building my own from scratch. This helps me understand core mechanics like collisions, forces, and movement in games.",
+                "icon": "./svg/physics.svg"
+            }
+        ]
+    },
+    {
+        "title": "App Development",
+        "description": "I develop cross-platform mobile applications using React Native and Expo, delivering smooth and responsive experiences.",
+        "icon": "./svg/app-dev.svg",
+        "branch": [
+            {
+                "title": "pandaDoc - Anonymous chat app",
+                "description": "A P2P-based anonymous chat app using WebRTC and React Native, ensuring private real-time communication.",
+                "icon": "./svg/chat-app.svg",
+                "link":"https://github.com/Nithin-3/pandaDoc",
+                "linkTitle":"Google Play"
+            }
+        ]
+    },
+    {
+        "title": "Web Development",
+        "description": "Skilled in the MERN stack (MongoDB, Express, React, Node.js), I build full-stack web applications that are fast, scalable, and user-friendly.",
+        "icon": "./svg/web-dev.svg",
+        "branch": [
+            {
+                "title": "t2t – Omegle Clone",
+                "description": "A personal project: real-time video/text chat web app inspired by Omegle, built with React and WebRTC.",
+                "icon": "./svg/omagale.svg",
+                "link":"https://github.com/Nithin-3/t2t",
+                "linkTitle":"Git Hub"
+            },
+            {
+                "title": "Checker – Staff Availability Tool",
+                "description": "Web tool to show staff availability (e.g., college or govt office) and track leave status.",
+                "icon": "./svg/checker.svg",
+                "link":"https://github.com/HITMAN-AK/private_checker/",
+                "linkTitle":"Git Hub"
+            }
+        ]
+    },
+    {
+        "title": "Game Development",
+        "description": "I create 2D and 3D games using Unity and Godot, exploring everything from educational to experimental gameplay.",
+        "icon": "./svg/game-dev.svg",
+        "branch": [
+            {
+                "title": "AntiBio Game",
+                "description": "An award-winning Godot game that educates players on antibiotic resistance.",
+                "icon": "./svg/antibio.svg"
+            },
+            {
+                "title": "Custom Physics Engine",
+                "description": "Built a physics engine as a personal learning project to understand collisions, gravity, and game mechanics.",
+                "icon": "./svg/physics.svg"
+            }
+        ]
+    },
+    {
+        "title": "AI/ML",
+        "description": "Graduated with a B.Tech in Artificial Intelligence & Machine Learning, with hands-on experience building intelligent systems.",
+        "icon": "./svg/ai-ml.svg",
+        "branch": [
+            {
+                "title": "PDF Summary System",
+                "description": "AI system that summarizes PDFs and allows users to query the content using NLP techniques.",
+                "icon": "./svg/summary.svg"
+            }
+        ]
+    },
+    {
+        "title": "Hardware & IoT Projects",
+        "description": "I enjoy prototyping hardware solutions that integrate with software and mobile apps.",
+        "icon": "./svg/iot.svg",
+        "branch": [
+            {
+                "title": "Anti-Theft Keychain Device",
+                "description": "A keychain-sized device that triggers alarm and vibration on phone and device when out of range via Bluetooth.",
+                "icon": "./svg/keychain.svg"
+            }
+        ]
+    },
+    {
+        "title": "Education",
+        "description": "Completed my B.Tech in Artificial Intelligence & Machine Learning, equipped with skills in AI, app dev, web dev, and game development.",
+        "icon": "./svg/education.svg",
+        "branch": [
+            {
+                "title": "AI/ML Specialization",
+                "description": "Specialized in AI, machine learning, and data science topics during my undergraduate studies.",
+                "icon": "./svg/ai-focus.svg"
+            }
+        ]
+    }
+]
+

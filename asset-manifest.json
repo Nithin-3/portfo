@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/potrfo/static/css/main.47935991.css",
+    "main.js": "/potrfo/static/js/main.5c3859f9.js",
+    "static/js/453.9613933e.chunk.js": "/potrfo/static/js/453.9613933e.chunk.js",
+    "static/media/ArimoNerdFontPropo-Regular.ttf": "/potrfo/static/media/ArimoNerdFontPropo-Regular.f4c5f78b8f843fa7b753.ttf",
+    "static/media/omnitrix.png": "/potrfo/static/media/omnitrix.5cf8763aed0354b0c6d6.png",
+    "static/media/image2vector.svg": "/potrfo/static/media/image2vector.294143be46007fbb723961d22f07bb28.svg",
+    "index.html": "/potrfo/index.html",
+    "main.47935991.css.map": "/potrfo/static/css/main.47935991.css.map",
+    "main.5c3859f9.js.map": "/potrfo/static/js/main.5c3859f9.js.map",
+    "453.9613933e.chunk.js.map": "/potrfo/static/js/453.9613933e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47935991.css",
+    "static/js/main.5c3859f9.js"
+  ]
+}
