@@ -14,7 +14,7 @@ export default function Portfo(){
     const animRangeMax = 70;
     const nav = useNavigate();
     useLayoutEffect(() => {
-        fetch('/data.json')
+        fetch('/portfo/data.json')
             .then((res) => res.json())
             .then((jsonData) => {
                 sdata(jsonData)

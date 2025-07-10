@@ -4,7 +4,7 @@ export default function GalvanBase(){
     const nav = useNavigate();
     const [images, setImages] = useState([]);
     useEffect(() => {
-        fetch('/galven/images.json')
+        fetch('/portfo/galven/images.json')
             .then(res => res.json())
             .then(setImages)
     }, []);
@@ -16,7 +16,7 @@ export default function GalvanBase(){
 </span>
         <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',gap:20}}>
             {images.map((v,i)=><a href={v.link|| "#"} key={i} target='_blank' rel='noreferrer'>
-                <div style={{background:`url(./galven/${v.image}) no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
+                <div style={{background:`url(./portfo/galven/${v.image}) no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
                     <p>{v.content}</p>
                 </div>
             </a>)}
