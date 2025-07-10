@@ -29,6 +29,11 @@ html, body {
     text-decoration: none;
     font-family:"NerdFont";
     scrollbar-width: none;
+     text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
 }
 #main{
     display:grid;
