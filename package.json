@@ -1,8 +1,8 @@
 {
-    "homepage": "https://nithin-3.github.io/portfo/",
-    "name": "portfol",
-    "version": "0.1.0",
+    "name": "portfo",
+    "version": "1.0.0",
     "private": true,
+    "homepage": "https://nithin-3.github.io/portfo",
     "dependencies": {
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
