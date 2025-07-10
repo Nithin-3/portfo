@@ -1,6 +1,6 @@
 import React,{useState,useEffect, useLayoutEffect,} from 'react'
 import {useNavigate} from 'react-router-dom'    
-import {ReactComponent as Azmuth} from './image2vector.svg'
+import  azmuth from './image2vector.svg'
 export default function Portfo(){
     const [data,sdata] = useState([])
     const [dimensions, setDimensions] = useState(0);
@@ -87,7 +87,7 @@ export default function Portfo(){
         <div id="main" onClick={togelBranch}>
             <div className="azmuth" >
                 <span onClick={(e)=>{e.stopPropagation();setvis(p=>!p)}}>
-                    <Azmuth height={`${dimensions*0.2}px`} width={`${dimensions*0.2}px`} />
+                    <img src={azmuth} alt='Azmuth' height={dimensions*0.2} width={dimensions*0.2}/>
                 </span>
                 <div className={`det ${vis?"open":''}`} >
                     <div onClick={()=>{nav('galvanBase')}}>
