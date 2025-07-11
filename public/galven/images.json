@@ -1,7 +1,19 @@
 [
     {
-        "image":"jdf.png",
-        "link":"https://github.com",
-        "content":"fref"
+        "image":"icon.png",
+        "link":"",
+        "content":"PandaDoc is a privacy-first, anonymous chat application built with Expo (React Native) for Android. The app is cleverly disguised as a document reader and lists documents available on your device"
+    },
+    {
+        "image":"intent.jpg",
+        "content":"Completed an internship in app and web development, gaining hands-on experience with real-world projects. Worked on front-end and back-end tasks, enhancing both technical and teamwork skills."
+    },
+    {
+        "image":"antibio.jpg",
+        "content":"Winner of the Spatial Prize in a game development contest focused on public health. Developed an engaging awareness game highlighting the dangers of super bacteria"
+    },
+    {
+        "image":"reimagine.jpg",
+        "content":"Participated in Reimagine IGDC, a 3-day national game development hackathon. Collaborated on a creative game prototype under intense time constraints"
     }
 ]
