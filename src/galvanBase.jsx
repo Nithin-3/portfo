@@ -16,11 +16,11 @@ export default function GalvanBase(){
 </span>
         <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',gap:20}}>
             {images.map((v,i)=>v.link?<a href={v.link} key={i} target={'_blank'} rel='noreferrer'>
-                <div style={{background:`url("https://nithin-3.github.io/portfo/galven/icon.png") no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
+                <div style={{background:`url("https://nithin-3.github.io/portfo/galven/${v.image}") no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
                     <p>{v.content}</p>
                 </div>
             </a>:<div href={v.link} key={i} target={'_blank'} rel='noreferrer'>
-                <div style={{background:`url("https://nithin-3.github.io/portfo/galven/icon.png") no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
+                <div style={{background:`url("https://nithin-3.github.io/portfo/galven/${v.image}") no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
                     <p>{v.content}</p>
                 </div>
             </div>)}
