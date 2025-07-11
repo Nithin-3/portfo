@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/portfo/static/css/main.df014384.css",
-    "main.js": "/portfo/static/js/main.aed402cf.js",
+    "main.js": "/portfo/static/js/main.1e4d36d1.js",
     "static/media/ArimoNerdFontPropo-Regular.ttf": "/portfo/static/media/ArimoNerdFontPropo-Regular.f4c5f78b8f843fa7b753.ttf",
     "static/media/omnitrix.png": "/portfo/static/media/omnitrix.5cf8763aed0354b0c6d6.png",
     "static/media/image2vector.svg": "/portfo/static/media/image2vector.294143be46007fbb723961d22f07bb28.svg",
     "index.html": "/portfo/index.html",
     "main.df014384.css.map": "/portfo/static/css/main.df014384.css.map",
-    "main.aed402cf.js.map": "/portfo/static/js/main.aed402cf.js.map"
+    "main.1e4d36d1.js.map": "/portfo/static/js/main.1e4d36d1.js.map"
   },
   "entrypoints": [
     "static/css/main.df014384.css",
-    "static/js/main.aed402cf.js"
+    "static/js/main.1e4d36d1.js"
   ]
 }
