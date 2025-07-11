@@ -15,11 +15,15 @@ export default function GalvanBase(){
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill={color}><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
 </span>
         <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly',gap:20}}>
-            {images.map((v,i)=><a href={v.link|| "#"} key={i} target='_blank' rel='noreferrer'>
-                <div style={{background:`url(./portfo/galven/${v.image}) no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
+            {images.map((v,i)=>v.link?<a href={v.link} key={i} target={'_blank'} rel='noreferrer'>
+                <div style={{background:`url("./portfo//galven/${v.image}") no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
                     <p>{v.content}</p>
                 </div>
-            </a>)}
+            </a>:<div href={v.link} key={i} target={'_blank'} rel='noreferrer'>
+                <div style={{background:`url("./portfo//galven/${v.image}") no-repeat center/contain`,aspectRatio:1,width }} className='galven-data'>
+                    <p>{v.content}</p>
+                </div>
+            </div>)}
         </div>
     </div>)
 }
