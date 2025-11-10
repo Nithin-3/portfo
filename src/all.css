@@ -18,6 +18,8 @@
 html,
 body {
     -ms-overflow-style: none;
+    background: transparent;
+    perspective: 1000;
 }
 
 *::-webkit-scrollbar {
@@ -47,6 +49,15 @@ body {
     height: 100vh;
 }
 
+.omni-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: none;
+    z-index: 1;
+    transform: translateX(-10px);
+}
+
 .omnit {
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -55,15 +66,12 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    position: relative;
+    position: absolute;
     overflow: hidden;
     box-shadow: none;
 }
 
-.omni-bg {
-    background: url('../public/img/omnitrix.png') center/cover no-repeat;
-    z-index: 1;
-}
+
 
 #omnit {
     transition: transform 0.3s ease;
@@ -108,9 +116,6 @@ svg {
     filter: drop-shadow(0 0 50px var(--fgL2));
 }
 
-.select {
-    /* transform: rotateX(85deg) translateZ(calc(-1 * var(--dim))); */
-}
 
 .random-div {
     opacity: 0.6;

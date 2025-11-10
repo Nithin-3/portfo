@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, } from 'react'
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls, useGLTF } from "@react-three/drei"
+import { Canvas, useFrame, } from "@react-three/fiber"
+import { useGLTF, } from "@react-three/drei"
 import { useNavigate } from 'react-router-dom'
 import azmuth from './image2vector.svg'
+import * as THREE from "three";
 export default function Portfo() {
     const [data, sdata] = useState([])
     const [dimensions, setDimensions] = useState(0);
@@ -10,15 +11,21 @@ export default function Portfo() {
     const [line, setline] = useState(0);
     const [move, setmove] = useState(80);
     const [vis, setvis] = useState(false);
+    const [rot, srot] = useState(0);
     const color = getComputedStyle(document.documentElement).getPropertyValue('--fgD1');
     const [disp, setdisp] = useState(null);
     const animRangeMin = 30;
     const animRangeMax = 70;
     const nav = useNavigate();
-    const mod = useRef(null);
     function Model() {
-        const model = useGLTF("/portfo/scene.glb");
-        return <primitive ref={mod} object={model.scene} scale={1} />;
+        const mod = useRef(null);
+        const { scene } = useGLTF("/portfo/scene.glb");
+        useFrame(() => {
+            if (!mod.current) return;
+            mod.current.rotation.x = THREE.MathUtils.lerp(mod.current.rotation.x, rot, 0.02);
+            mod.current.position.y = THREE.MathUtils.lerp(mod.current.position.y, rot ? -5 : -2.9, 0.02);
+        });
+        return <primitive object={scene} scale={1} ref={mod} />;
     }
     useLayoutEffect(() => {
         fetch('/portfo/data.json')
@@ -27,6 +34,7 @@ export default function Portfo() {
                 sdata(jsonData)
             });
     }, []);
+
     useEffect(() => {
         const handleResize = () => {
             const set = Math.min(window.innerWidth, window.innerHeight) * 0.6
@@ -85,10 +93,13 @@ export default function Portfo() {
             p || document.querySelectorAll(".random-div").forEach((div) => {
                 div.style.opacity = 0.7
             });
-            !p ? document.getElementById("omnit").classList.add("select") : document.getElementById("omnit").classList.remove("select")
+            if (p) {
+                srot(0);
+            } else {
+                srot(Math.PI * -0.4);
+            }
             return !p;
         });
-        console.log(mod.current)
     }
 
     return (<div style={{ height: `${data.length * 600}vh` }} id="scroll" className='scroll'>
@@ -112,11 +123,10 @@ export default function Portfo() {
                 </div>
             </div>
             <div id="omnit" style={{ height: `${dimensions * 1.7}px` }}>
-                <div className='omni-bg' style={{ position: 'absolute', height: '100%', width: '100%' }} >
-                    <Canvas camera={{ position: [0, -3, 4] }}>
+                <div className="omni-bg">
+                    <Canvas gl={{ alpha: true }} style={{ backgroundColor: "blue" }} >
                         <ambientLight intensity={2} />
                         <Model />
-                        <OrbitControls />
                     </Canvas>
                 </div>
                 <div className="omnit" style={{ height: `${dimensions * 0.9}px` }}>
