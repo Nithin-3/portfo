@@ -15,12 +15,7 @@
     font-style: normal;
 }
 
-html,
-body {
-    -ms-overflow-style: none;
-    background: transparent;
-    perspective: 1000;
-}
+
 
 *::-webkit-scrollbar {
     display: none;
@@ -29,7 +24,7 @@ body {
 * {
     margin: 0;
     padding: 0;
-    background: var(--bg);
+    background: transparent;
     color: var(--fgL2);
     text-decoration: none;
     font-family: "NerdFont";
@@ -39,6 +34,12 @@ body {
         1px -1px 0 black,
         -1px 1px 0 black,
         1px 1px 0 black;
+}
+
+html,
+body {
+    -ms-overflow-style: none;
+    background: var(--bg);
 }
 
 #main {
@@ -53,9 +54,7 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: none;
     z-index: 1;
-    transform: translateX(-10px);
 }
 
 .omnit {

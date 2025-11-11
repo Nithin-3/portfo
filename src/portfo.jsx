@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, } from 'react'
 import { Canvas, useFrame, } from "@react-three/fiber"
-import { useGLTF, } from "@react-three/drei"
+import { useGLTF, Html } from "@react-three/drei"
+import * as THREE from "three";
 import { useNavigate } from 'react-router-dom'
 import azmuth from './image2vector.svg'
-import * as THREE from "three";
 export default function Portfo() {
     const [data, sdata] = useState([])
     const [dimensions, setDimensions] = useState(0);
@@ -11,21 +11,43 @@ export default function Portfo() {
     const [line, setline] = useState(0);
     const [move, setmove] = useState(80);
     const [vis, setvis] = useState(false);
-    const [rot, srot] = useState(0);
+    const [rot, srot] = useState(Math.PI * 2);
     const color = getComputedStyle(document.documentElement).getPropertyValue('--fgD1');
     const [disp, setdisp] = useState(null);
     const animRangeMin = 30;
     const animRangeMax = 70;
     const nav = useNavigate();
     function Model() {
-        const mod = useRef(null);
-        const { scene } = useGLTF("/portfo/scene.glb");
-        useFrame(() => {
+        const mod = useRef();
+        const htm = useRef();
+        const { nodes, materials } = useGLTF("/portfo/scene.glb");
+
+        useFrame((_, delta) => {
             if (!mod.current) return;
-            mod.current.rotation.x = THREE.MathUtils.lerp(mod.current.rotation.x, rot, 0.02);
-            mod.current.position.y = THREE.MathUtils.lerp(mod.current.position.y, rot ? -5 : -2.9, 0.02);
+            mod.current.rotation.x = THREE.MathUtils.damp(mod.current.rotation.x, rot, 4, delta);
+            mod.current.rotation.z = THREE.MathUtils.damp(mod.current.rotation.z, rot, 4, delta);
+            mod.current.position.y = THREE.MathUtils.damp(mod.current.position.y, tog ? -3 : 0, 4, delta);
+            mod.current.position.z = THREE.MathUtils.damp(mod.current.position.z, tog ? -3 : 0, 4, delta);
         });
-        return <primitive object={scene} scale={1} ref={mod} />;
+
+        return (
+            <group ref={mod}>
+                <mesh geometry={nodes.Cylinder001.geometry} material={materials.omni} rotation={[-Math.PI / 2, 0, 0]} scale={1.7}>
+                    <group position={[-1.2, 0, 1.2]}>
+                        <Html transform ref={htm} style={{ pointerEvents: "none" }} zIndexRange={[-10, -5]}>
+                            <div className="omnit" style={{ height: `${dimensions * 0.9}px`, position: "relative" }}>
+                                <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`, marginLeft: `${line * 0.3}px` }}>
+                                    <polygon points={`${line * 0.2},0 ${line * 0.5},0 ${line},${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.2},${dimensions} ${line * 0.9},${dimensions * 0.5}`} fill={color} />
+                                </svg>
+                                <svg width={line} height={dimensions} style={{ transform: `translateX(${move}%)`, marginRight: `${line * 0.3}px` }}>
+                                    <polygon points={`${line * 0.8},0 ${line * 0.5},0 0,${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`} fill={color} />
+                                </svg>
+                            </div>
+                        </Html>
+                    </group>
+                </mesh>
+            </group>
+        );
     }
     useLayoutEffect(() => {
         fetch('/portfo/data.json')
@@ -93,13 +115,9 @@ export default function Portfo() {
             p || document.querySelectorAll(".random-div").forEach((div) => {
                 div.style.opacity = 0.7
             });
-            if (p) {
-                srot(0);
-            } else {
-                srot(Math.PI * -0.4);
-            }
             return !p;
         });
+        srot(prev => prev === Math.PI * -0.4 ? Math.PI * 0.05 : Math.PI * -0.4);
     }
 
     return (<div style={{ height: `${data.length * 600}vh` }} id="scroll" className='scroll'>
@@ -122,24 +140,14 @@ export default function Portfo() {
                     </div>
                 </div>
             </div>
-            <div id="omnit" style={{ height: `${dimensions * 1.7}px` }}>
-                <div className="omni-bg">
-                    <Canvas gl={{ alpha: true }} style={{ backgroundColor: "blue" }} >
-                        <ambientLight intensity={2} />
+            <div id="omnit" style={{ height: `${dimensions * 1.7}px`, background: "transparent" }}>
+                <div className="omni-bg" style={{ background: "transparent" }}>
+                    <Canvas gl={{ alpha: true, }} style={{ background: "transparent" }} >
+                        <ambientLight intensity={10} />
                         <Model />
                     </Canvas>
                 </div>
-                <div className="omnit" style={{ height: `${dimensions * 0.9}px` }}>
-                    <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`, marginLeft: `${line * 0.3}px` }}>
-                        <polygon
-                            points={`${line * 0.2},0 ${line * 0.5},0 ${line},${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.2},${dimensions} ${line * 0.9},${dimensions * 0.5}`}
-                            fill={color}
-                        />
-                    </svg>
-                    <svg width={line} height={dimensions} style={{ transform: `translateX(${move}%)`, marginRight: `${line * 0.3}px` }}>
-                        <polygon points={`${line * 0.8},0 ${line * 0.5},0 0,${dimensions * 0.5} ${line * 0.5},${dimensions}  ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`} fill={color} />
-                    </svg>
-                </div>
+
             </div>
             <div className="aline" id="aline">
                 {tog ? disp?.branch.map((e, i) => (
