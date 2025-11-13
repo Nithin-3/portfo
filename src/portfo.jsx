@@ -63,7 +63,7 @@ export default function Portfo() {
                 mod.current.rotation.z = THREE.MathUtils.lerp(anim.current.init.z, anim.current.tar.z, ease);
                 mod.current.position.y = THREE.MathUtils.lerp(anim.current.init.y, anim.current.tar.y, ease);
                 mod.current.position.z = THREE.MathUtils.lerp(anim.current.init.zpos, anim.current.tar.zpos, ease);
-                if (omnit.current[2]) omnit.current[2].style.width = `${getWid()}px`
+                if (omnit.current[2]) omnit.current[2].style.width = `${dimensions}px`
                 if (t < 1) requestAnimationFrame(animate);
                 else anim.current.init = { ...anim.current.tar }
             }
@@ -79,7 +79,7 @@ export default function Portfo() {
             <group ref={mod}>
                 <mesh ref={meshRef} geometry={nodes.Cylinder001.geometry} material={materials.omni} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1.7}>
                     <group position={[0, 0, 0]}>
-                        <Html transform style={{ pointerEvents: "none" }} zIndexRange={[-1, 0]} rotation={[90, 0, 0]} scale={0.15}>
+                        <Html transform style={{ pointerEvents: "none" }} zIndexRange={[-3, -2]} rotation={[90, 0, 0]} scale={0.15}>
                             <div className="omnit" ref={el => omnit.current[2] = el} >
                                 <svg width={line} height={line * 2} ref={el => omnit.current[0] = el} style={{ marginLeft: `${line * 0.3}px` }}>
                                     <polygon points={`${line * 0.2},0 ${line * 0.5},0 ${line},${line * 2 * 0.5} ${line * 0.5},${line * 2} ${line * 0.2},${line * 2} ${line * 0.9},${line * 2 * 0.5}`} fill={color} />
