@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, } from 'react'
-import { Canvas, useFrame, } from "@react-three/fiber"
+import { Canvas, useFrame, useThree, } from "@react-three/fiber"
 import { useGLTF, Html } from "@react-three/drei"
 import * as THREE from "three";
 import { useNavigate } from 'react-router-dom'
@@ -9,38 +9,83 @@ export default function Portfo() {
     const [dimensions, setDimensions] = useState(0);
     const [tog, settog] = useState(false);
     const [line, setline] = useState(0);
-    const [move, setmove] = useState(80);
+    const move = useRef(80);
     const [vis, setvis] = useState(false);
-    const [rot, srot] = useState(Math.PI * 2);
-    const color = getComputedStyle(document.documentElement).getPropertyValue('--fgD1');
+    const [rot, srot] = useState(0);
+    const color = React.useMemo(() => getComputedStyle(document.documentElement).getPropertyValue('--fgD1'), []);
     const [disp, setdisp] = useState(null);
     const animRangeMin = 30;
     const animRangeMax = 70;
     const nav = useNavigate();
+    const anim = useRef({ tar: { x: 0, z: 0, y: 0, zpos: 0 }, init: { x: 0, z: 0, y: 0, zpos: 0 } });
+    const omnit = useRef([]);
     function Model() {
-        const mod = useRef();
-        const htm = useRef();
         const { nodes, materials } = useGLTF("/portfo/scene.glb");
-
-        useFrame((_, delta) => {
+        const mod = useRef();
+        const duration = 600;
+        const meshRef = useRef();
+        const { camera, size } = useThree();
+        const getWid = () => {
+            if (!meshRef.current) return;
+            const box = new THREE.Box3().setFromObject(mod.current);
+            const vertices = [
+                new THREE.Vector3(box.min.x, box.min.y, box.min.z),
+                new THREE.Vector3(box.min.x, box.min.y, box.max.z),
+                new THREE.Vector3(box.min.x, box.max.y, box.min.z),
+                new THREE.Vector3(box.min.x, box.max.y, box.max.z),
+                new THREE.Vector3(box.max.x, box.min.y, box.min.z),
+                new THREE.Vector3(box.max.x, box.min.y, box.max.z),
+                new THREE.Vector3(box.max.x, box.max.y, box.min.z),
+                new THREE.Vector3(box.max.x, box.max.y, box.max.z)
+            ];
+            const projected = vertices.map(v => {
+                const vector = v.clone().project(camera);
+                return {
+                    x: (vector.x * 0.5 + 0.5) * size.width,
+                    y: (1 - (vector.y * 0.5 + 0.5)) * size.height
+                };
+            });
+            const xs = projected.map(p => p.x);
+            const minX = Math.min(...xs);
+            const maxX = Math.max(...xs);
+            return maxX - minX
+        }
+        useEffect(() => {
             if (!mod.current) return;
-            mod.current.rotation.x = THREE.MathUtils.damp(mod.current.rotation.x, rot, 4, delta);
-            mod.current.rotation.z = THREE.MathUtils.damp(mod.current.rotation.z, rot, 4, delta);
-            mod.current.position.y = THREE.MathUtils.damp(mod.current.position.y, tog ? -3 : 0, 4, delta);
-            mod.current.position.z = THREE.MathUtils.damp(mod.current.position.z, tog ? -3 : 0, 4, delta);
-        });
+            const start = performance.now();
+            anim.current.tar = { x: rot, z: rot, y: tog ? -3 : 0, zpos: tog ? -3 : 0 };
 
+            function animate(time) {
+                if (!mod.current) return;
+                const t = Math.min((time - start) / duration, 1);
+                const ease = t * (2 - t); // ease-out
+                mod.current.rotation.x = THREE.MathUtils.lerp(anim.current.init.x, anim.current.tar.x, ease);
+                mod.current.rotation.z = THREE.MathUtils.lerp(anim.current.init.z, anim.current.tar.z, ease);
+                mod.current.position.y = THREE.MathUtils.lerp(anim.current.init.y, anim.current.tar.y, ease);
+                mod.current.position.z = THREE.MathUtils.lerp(anim.current.init.zpos, anim.current.tar.zpos, ease);
+                if (omnit.current[2]) omnit.current[2].style.width = `${getWid()}px`
+                if (t < 1) requestAnimationFrame(animate);
+                else anim.current.init = { ...anim.current.tar }
+            }
+            requestAnimationFrame(animate);
+        }, [rot])
+        useFrame(() => {
+            if (!omnit.current[0] || !omnit.current[1] || !omnit.current[2]) return;
+            omnit.current[0].style.transform = `translateX(-${move.current}%)`
+            omnit.current[1].style.transform = `translateX(${move.current}%)`
+            if (tog) omnit.current[2].style.transform = 'rotateZ(10deg)'
+        })
         return (
             <group ref={mod}>
-                <mesh geometry={nodes.Cylinder001.geometry} material={materials.omni} rotation={[-Math.PI / 2, 0, 0]} scale={1.7}>
-                    <group position={[-1.2, 0, 1.2]}>
-                        <Html transform ref={htm} style={{ pointerEvents: "none" }} zIndexRange={[-10, -5]}>
-                            <div className="omnit" style={{ height: `${dimensions * 0.9}px`, position: "relative" }}>
-                                <svg width={line} height={dimensions} style={{ transform: `translateX(-${move}%)`, marginLeft: `${line * 0.3}px` }}>
-                                    <polygon points={`${line * 0.2},0 ${line * 0.5},0 ${line},${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.2},${dimensions} ${line * 0.9},${dimensions * 0.5}`} fill={color} />
+                <mesh ref={meshRef} geometry={nodes.Cylinder001.geometry} material={materials.omni} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1.7}>
+                    <group position={[0, 0, 0]}>
+                        <Html transform style={{ pointerEvents: "none" }} zIndexRange={[-1, 0]} rotation={[90, 0, 0]} scale={0.15}>
+                            <div className="omnit" ref={el => omnit.current[2] = el} >
+                                <svg width={line} height={line * 2} ref={el => omnit.current[0] = el} style={{ marginLeft: `${line * 0.3}px` }}>
+                                    <polygon points={`${line * 0.2},0 ${line * 0.5},0 ${line},${line * 2 * 0.5} ${line * 0.5},${line * 2} ${line * 0.2},${line * 2} ${line * 0.9},${line * 2 * 0.5}`} fill={color} />
                                 </svg>
-                                <svg width={line} height={dimensions} style={{ transform: `translateX(${move}%)`, marginRight: `${line * 0.3}px` }}>
-                                    <polygon points={`${line * 0.8},0 ${line * 0.5},0 0,${dimensions * 0.5} ${line * 0.5},${dimensions} ${line * 0.8},${dimensions} ${line * 0.1},${dimensions * 0.5}`} fill={color} />
+                                <svg width={line} height={line * 2} ref={el => omnit.current[1] = el} style={{ marginRight: `${line * 0.3}px` }}>
+                                    <polygon points={`${line * 0.8},0 ${line * 0.5},0 0,${line * 2 * 0.5} ${line * 0.5},${line * 2} ${line * 0.8},${line * 2} ${line * 0.1},${line * 2 * 0.5}`} fill={color} />
                                 </svg>
                             </div>
                         </Html>
@@ -59,7 +104,7 @@ export default function Portfo() {
 
     useEffect(() => {
         const handleResize = () => {
-            const set = Math.min(window.innerWidth, window.innerHeight) * 0.6
+            const set = Math.min(window.innerWidth, window.innerHeight)
             setDimensions(set);
             setline(set / 2);
             document.documentElement.style.setProperty("--dim", `${window.innerHeight / 2 - set / 2}px`)
@@ -72,7 +117,7 @@ export default function Portfo() {
             const scrollPercentage = Math.min(scrollPosition / scrollHeight, 1) * 100;
             const scrollPart = 100 / data.length;
             const changePercentage = (scrollPercentage % scrollPart) / scrollPart * 100
-            changePercentage < 51 ? setmove(80 - ((changePercentage / 50) * 80)) : setmove(((changePercentage - 50) / 50) * 80);
+            move.current = changePercentage < 51 ? (80 - ((changePercentage / 50) * 80)) : (((changePercentage - 50) / 50) * 80);
             if (changePercentage > animRangeMin && changePercentage < animRangeMax) {
                 changeAline(changePercentage);
             }
@@ -83,8 +128,8 @@ export default function Portfo() {
                 })
             }
             setdisp(data[Math.floor(scrollPercentage / scrollPart) >= data.length ? data.length - 1 : Math.floor(scrollPercentage / scrollPart)]);
-            scrollPercentage > 99 && window.scrollTo(0, scrollHeight * 0.01);
-            scrollPercentage === 0 && window.scrollTo(0, scrollHeight * 0.99);
+            if (scrollPercentage >= 99) window.scrollTo(0, scrollHeight * 0.01);
+            else if (scrollPercentage <= 0) window.scrollTo(0, scrollHeight * 0.99);
         };
         handleResize()
         window.addEventListener('resize', handleResize);
@@ -117,7 +162,7 @@ export default function Portfo() {
             });
             return !p;
         });
-        srot(prev => prev === Math.PI * -0.4 ? Math.PI * 0.05 : Math.PI * -0.4);
+        srot(prev => prev === Math.PI * -0.3 ? Math.PI * 0.01 : Math.PI * -0.3);
     }
 
     return (<div style={{ height: `${data.length * 600}vh` }} id="scroll" className='scroll'>
@@ -140,13 +185,11 @@ export default function Portfo() {
                     </div>
                 </div>
             </div>
-            <div id="omnit" style={{ height: `${dimensions * 1.7}px`, background: "transparent" }}>
-                <div className="omni-bg" style={{ background: "transparent" }}>
-                    <Canvas gl={{ alpha: true, }} style={{ background: "transparent" }} >
-                        <ambientLight intensity={10} />
-                        <Model />
-                    </Canvas>
-                </div>
+            <div id="omnit" style={{ height: `${dimensions}px` }}>
+                <Canvas style={{ width: "100%", height: "100%" }}>
+                    <ambientLight intensity={10} />
+                    <Model />
+                </Canvas>
 
             </div>
             <div className="aline" id="aline">

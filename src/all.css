@@ -50,14 +50,8 @@ body {
     height: 100vh;
 }
 
-.omni-bg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-}
-
 .omnit {
+    position: relative;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background: none;
@@ -65,24 +59,22 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    position: absolute;
     overflow: hidden;
     box-shadow: none;
+    background-color: #ff00ff;
 }
 
 
 
 #omnit {
-    transition: transform 0.3s ease;
-    aspect-ratio: 1/1;
-    display: grid;
-    place-items: center;
-    position: relative;
+    aspect-ratio: 1;
+    border: 3px solid #fff;
 }
 
 svg {
     background: none;
     position: absolute;
+    border: 3px solid #fff;
 }
 
 .aline {
