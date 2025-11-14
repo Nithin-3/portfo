@@ -73,24 +73,26 @@ export default function Portfo() {
             if (!omnit.current[0] || !omnit.current[1] || !omnit.current[2]) return;
             omnit.current[0].style.transform = `translateX(-${move.current}%)`
             omnit.current[1].style.transform = `translateX(${move.current}%)`
-            if (tog) omnit.current[2].style.transform = 'rotateZ(10deg)'
+            if (tog) omnit.current[2].style.transform = ' translate(-25%, -16%)'
         })
         return (
             <group ref={mod}>
-                <mesh ref={meshRef} geometry={nodes.Cylinder001.geometry} material={materials.omni} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={1.7}>
-                    <group position={[0, 0, 0]}>
-                        <Html transform style={{ pointerEvents: "none" }} zIndexRange={[-3, -2]} rotation={[90, 0, 0]} scale={0.15}>
-                            <div className="omnit" ref={el => omnit.current[2] = el} >
-                                <svg width={line} height={line * 2} ref={el => omnit.current[0] = el} style={{ marginLeft: `${line * 0.3}px` }}>
-                                    <polygon points={`${line * 0.2},0 ${line * 0.5},0 ${line},${line * 2 * 0.5} ${line * 0.5},${line * 2} ${line * 0.2},${line * 2} ${line * 0.9},${line * 2 * 0.5}`} fill={color} />
-                                </svg>
-                                <svg width={line} height={line * 2} ref={el => omnit.current[1] = el} style={{ marginRight: `${line * 0.3}px` }}>
-                                    <polygon points={`${line * 0.8},0 ${line * 0.5},0 0,${line * 2 * 0.5} ${line * 0.5},${line * 2} ${line * 0.8},${line * 2} ${line * 0.1},${line * 2 * 0.5}`} fill={color} />
-                                </svg>
-                            </div>
-                        </Html>
-                    </group>
-                </mesh>
+                <group rotation={[Math.PI / 2, 0, 0]} scale={9.371}>
+                    <mesh geometry={nodes.Circle001.geometry} material={materials['Material.002']} />
+                    <mesh geometry={nodes.Circle001_1.geometry} material={materials.omni} />
+                </group>
+                <group position={[0, 0, 0]}>
+                    <Html transform style={{ pointerEvents: "none" }} zIndexRange={[-3, -2]} scale={0.15}>
+                        <div className="omnit" ref={el => omnit.current[2] = el} >
+                            <svg width={line} height={line * 2} ref={el => omnit.current[0] = el} style={{ marginLeft: `${line * 0.3}px` }}>
+                                <polygon points={`${line * 0.2},0 ${line * 0.5},0 ${line},${line * 2 * 0.5} ${line * 0.5},${line * 2} ${line * 0.2},${line * 2} ${line * 0.9},${line * 2 * 0.5}`} fill={color} />
+                            </svg>
+                            <svg width={line} height={line * 2} ref={el => omnit.current[1] = el} style={{ marginRight: `${line * 0.3}px` }}>
+                                <polygon points={`${line * 0.8},0 ${line * 0.5},0 0,${line * 2 * 0.5} ${line * 0.5},${line * 2} ${line * 0.8},${line * 2} ${line * 0.1},${line * 2 * 0.5}`} fill={color} />
+                            </svg>
+                        </div>
+                    </Html>
+                </group>
             </group>
         );
     }
