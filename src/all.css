@@ -61,7 +61,6 @@ body {
     flex-direction: row;
     overflow: hidden;
     box-shadow: none;
-    background-color: #ff00ff;
 }
 
 
@@ -74,7 +73,6 @@ body {
 svg {
     background: none;
     position: absolute;
-    border: 3px solid #fff;
 }
 
 .aline {
