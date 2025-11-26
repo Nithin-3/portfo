@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/portfo/static/css/main.df1c8f52.css",
-    "main.js": "/portfo/static/js/main.a3b387ec.js",
+    "main.js": "/portfo/static/js/main.9fc57086.js",
     "static/media/ArimoNerdFontPropo-Regular.ttf": "/portfo/static/media/ArimoNerdFontPropo-Regular.f4c5f78b8f843fa7b753.ttf",
     "static/media/image2vector.svg": "/portfo/static/media/image2vector.294143be46007fbb723961d22f07bb28.svg",
     "index.html": "/portfo/index.html",
     "main.df1c8f52.css.map": "/portfo/static/css/main.df1c8f52.css.map",
-    "main.a3b387ec.js.map": "/portfo/static/js/main.a3b387ec.js.map"
+    "main.9fc57086.js.map": "/portfo/static/js/main.9fc57086.js.map"
   },
   "entrypoints": [
     "static/css/main.df1c8f52.css",
-    "static/js/main.a3b387ec.js"
+    "static/js/main.9fc57086.js"
   ]
 }
