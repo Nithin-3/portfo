@@ -1,10 +1,10 @@
 :root {
-    --fg: #019606;
-    --fgD1: #007a04;
-    --fgD2: #004f03;
-    --fgL1: #2abf2a;
-    --fgL2: #66D866;
-    --bg: #000;
+    --fg: hsl(124, 99%, 30%);
+    --fgD1: hsl(124, 96%, 24%);
+    --fgD2: hsl(124, 94%, 16%);
+    --fgL1: hsl(124, 63%, 46%);
+    --fgL2: hsl(124, 56%, 62%);
+    --bg: hsl(0, 0%, 0%);
     --data-hei: 20vh;
 }
 
@@ -50,18 +50,6 @@ body {
     height: 100vh;
 }
 
-.omnit {
-    position: relative;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    overflow: hidden;
-    box-shadow: none;
-}
 
 
 
@@ -69,10 +57,6 @@ body {
     aspect-ratio: 1;
 }
 
-svg {
-    background: none;
-    position: absolute;
-}
 
 .aline {
     position: absolute;
@@ -104,10 +88,6 @@ svg {
     filter: drop-shadow(0 0 50px var(--fgL2));
 }
 
-
-.random-div {
-    opacity: 0.6;
-}
 
 .azmuth {
     position: absolute;

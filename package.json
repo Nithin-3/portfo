@@ -4,6 +4,9 @@
     "private": true,
     "homepage": "https://nithin-3.github.io/portfo",
     "dependencies": {
+        "@react-spring/core": "^10.0.3",
+        "@react-spring/three": "^10.0.3",
+        "@react-spring/web": "^10.0.3",
         "@react-three/drei": "^10.7.6",
         "@react-three/fiber": "^9.4.0",
         "@testing-library/jest-dom": "^5.17.0",
@@ -12,6 +15,7 @@
         "caniuse-lite": "^1.0.30001727",
         "cra-template": "1.2.0",
         "gh-pages": "^6.3.0",
+        "lodash": "^4.17.21",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-router-dom": "^7.1.5",
