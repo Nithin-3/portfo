@@ -11,24 +11,36 @@
 @font-face {
     font-family: "NerdFont";
     src: url("ArimoNerdFontPropo-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
 }
 
-
-
+/* Hide scrollbars */
 *::-webkit-scrollbar {
     display: none;
 }
 
+html,
+body {
+    background: var(--bg);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* BASIC RESET */
 * {
     margin: 0;
     padding: 0;
-    background: transparent;
     color: var(--fgL2);
-    text-decoration: none;
     font-family: "NerdFont";
-    scrollbar-width: none;
+    text-decoration: none;
+}
+
+/* Apply text shadow ONLY to text elements */
+h1,
+h2,
+h3,
+p,
+span,
+a {
     text-shadow:
         -1px -1px 0 black,
         1px -1px 0 black,
@@ -36,37 +48,35 @@
         1px 1px 0 black;
 }
 
-html,
-body {
-    -ms-overflow-style: none;
-    background: var(--bg);
-}
-
 #main {
     display: grid;
     place-items: center;
-    position: fixed;
     width: 100vw;
     height: 100vh;
+    position: fixed;
+    isolation: isolate;
+    /* forces stacking context */
 }
-
-
-
 
 #omnit {
     aspect-ratio: 1;
 }
 
-
+/* Floating text panel */
 .aline {
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     background: none;
     z-index: 2;
+}
+
+/* Apply drop-shadow only to visible items */
+.aline div,
+.aline img {
+    filter: drop-shadow(0 0 35px var(--fg));
 }
 
 .aline a {
@@ -79,16 +89,7 @@ body {
     margin: 20px;
 }
 
-.aline span {
-    font-size: 2rem;
-}
-
-.aline * {
-    background: none;
-    filter: drop-shadow(0 0 50px var(--fgL2));
-}
-
-
+/* Azmuth menu */
 .azmuth {
     position: absolute;
     top: 5vh;
@@ -100,20 +101,16 @@ body {
     cursor: pointer;
     position: absolute;
     right: 5vw;
-    height: 20px;
-    width: 20px;
-    background: none;
 }
 
+/* Rotating menu */
 .det {
     position: absolute;
     top: var(--data-hei);
     width: calc(1.4 * var(--data-hei));
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     left: calc((-1.4*var(--data-hei))/2);
-    overflow: visible;
     opacity: 0;
     transform: rotate(-90deg);
     transform-origin: 50% calc(-1 * var(--data-hei));
@@ -127,11 +124,22 @@ body {
     transform: rotate(45deg);
 }
 
+.open p,
+.dropdown a {
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.open h3 {
+    text-decoration: underline;
+    cursor: default;
+}
+
 .open>div {
     margin: 10px;
     transform: rotate(-45deg);
-    cursor: pointer;
 }
+
 
 h2,
 p {

@@ -173,11 +173,9 @@ export default function Portfo() {
                     <img src={azmuth} alt='Azmuth' height={dimensions * 0.1} width={dimensions * 0.1} />
                 </span>
                 <div className={`det ${vis ? "open" : ''}`} >
-                    <div onClick={() => { nav('galvanBase') }}>
-                        <p>Galvan Base</p>
-                    </div>
                     <div>
-                        <p>Reach Out</p>
+                        <p onClick={() => { nav('galvanBase') }}>Galvan Base</p>
+                        <h3>Reach Out</h3>
                         <div className="dropdown">
                             <a href="mailto:nithin3deve@gmail.com">󰆎&nbsp;nithin3dev@gmail.com</a><br />
                             <a href="tel:+917639824119"> +91 7639824119</a><br />
