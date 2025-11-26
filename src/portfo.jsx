@@ -27,7 +27,7 @@ export default function Portfo() {
         rx: rot,
         rz: rot,
         py: tog ? -3 : 0,
-        pz: tog ? -3 : 0,
+        pz: tog ? -1.5 : 0,
         move: moveS,
         config: { tension: 120, friction: 18 }
     });
@@ -130,7 +130,7 @@ export default function Portfo() {
         const onTouchMove = (e) => {
             const delta = touchStartY - e.touches[0].clientY;
             touchStartY = e.touches[0].clientY;
-            deltaBuffer += delta * 0.5; // adjust sensitivity
+            deltaBuffer += delta * 0.01; // adjust sensitivity
         };
 
         const loop = () => {
@@ -193,12 +193,12 @@ export default function Portfo() {
             </div>
             <div className="aline" id="aline" ref={aline}>
                 {tog ? disp?.branch.map((e, i) => (
-                    <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain`, maxWidth: `${dimensions - 60}px` }}>
+                    <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.6}px` }}>
                         <h2>{e.title}</h2>
                         {e.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
                         {e.link && <a href={e.link} target='_blank' rel='noreferrer' >{e.linkTitle || e.link}</a>}
                     </div>
-                )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain`, maxWidth: `${dimensions - 50}px` }}>
+                )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.5}px` }}>
                     <h2>{disp?.title}</h2>
                     {disp?.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
                 </div>
