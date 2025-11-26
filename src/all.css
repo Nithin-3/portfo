@@ -23,9 +23,6 @@ body {
     background: var(--bg);
     -ms-overflow-style: none;
     scrollbar-width: none;
-    overscroll-behavior: none;
-    overflow: hidden;
-    height: 100%;
 }
 
 /* BASIC RESET */
@@ -58,7 +55,11 @@ a {
     height: 100vh;
     position: fixed;
     isolation: isolate;
+    overscroll-behavior: none;
     /* forces stacking context */
+    overscroll-behavior: none;
+    overflow: hidden;
+    touch-action: none;
 }
 
 #omnit {
@@ -152,6 +153,9 @@ p {
 /* galvan base */
 .base-root {
     padding-top: 5vh;
+    overscroll-behavior: unset;
+    overflow: hidden;
+    height: 100%;
 }
 
 .base-root span {

@@ -166,44 +166,42 @@ export default function Portfo() {
         srot(prev => prev === Math.PI * -0.3 ? Math.PI * 0.01 : Math.PI * -0.3);
     }
 
-    return (<div id="scroll" className='scroll'>
-        <div id="main" onClick={togelBranch}>
-            <div className="azmuth" >
-                <span onClick={(e) => { e.stopPropagation(); setvis(p => !p) }}>
-                    <img src={azmuth} alt='Azmuth' height={dimensions * 0.1} width={dimensions * 0.1} />
-                </span>
-                <div className={`det ${vis ? "open" : ''}`} >
-                    <div>
-                        <p onClick={() => { nav('galvanBase') }}>Galvan Base</p>
-                        <h3>Reach Out</h3>
-                        <div className="dropdown">
-                            <a href="mailto:nithin3deve@gmail.com">󰆎&nbsp;nithin3dev@gmail.com</a><br />
-                            <a href="tel:+917639824119"> +91 7639824119</a><br />
-                            <a href="https://github.com/Nithin-3" target="_blank" rel="noopener noreferrer"> Github Profile</a>
-                        </div>
+    return (<div id="main" onClick={togelBranch}>
+        <div className="azmuth" >
+            <span onClick={(e) => { e.stopPropagation(); setvis(p => !p) }}>
+                <img src={azmuth} alt='Azmuth' height={dimensions * 0.1} width={dimensions * 0.1} />
+            </span>
+            <div className={`det ${vis ? "open" : ''}`} >
+                <div>
+                    <p onClick={() => { nav('galvanBase') }}>Galvan Base</p>
+                    <h3>Reach Out</h3>
+                    <div className="dropdown">
+                        <a href="mailto:nithin3deve@gmail.com">󰆎&nbsp;nithin3dev@gmail.com</a><br />
+                        <a href="tel:+917639824119"> +91 7639824119</a><br />
+                        <a href="https://github.com/Nithin-3" target="_blank" rel="noopener noreferrer"> Github Profile</a>
                     </div>
                 </div>
             </div>
-            <div id="omnit" style={{ height: `${dimensions}px` }}>
-                <Canvas style={{ width: "100%", height: "100%" }} dpr={Math.min(window.devicePixelRatio, 1.5)}>
-                    <ambientLight intensity={10} />
-                    <Model />
-                </Canvas>
+        </div>
+        <div id="omnit" style={{ height: `${dimensions}px` }}>
+            <Canvas style={{ width: "100%", height: "100%" }} dpr={Math.min(window.devicePixelRatio, 1.5)}>
+                <ambientLight intensity={10} />
+                <Model />
+            </Canvas>
 
-            </div>
-            <div className="aline" id="aline" ref={aline}>
-                {tog ? disp?.branch.map((e, i) => (
-                    <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.6}px` }}>
-                        <h2>{e.title}</h2>
-                        {e.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
-                        {e.link && <a href={e.link} target='_blank' rel='noreferrer' >{e.linkTitle || e.link}</a>}
-                    </div>
-                )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.5}px` }}>
-                    <h2>{disp?.title}</h2>
-                    {disp?.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
+        </div>
+        <div className="aline" id="aline" ref={aline}>
+            {tog ? disp?.branch.map((e, i) => (
+                <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.6}px` }}>
+                    <h2>{e.title}</h2>
+                    {e.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
+                    {e.link && <a href={e.link} target='_blank' rel='noreferrer' >{e.linkTitle || e.link}</a>}
                 </div>
-                }
+            )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.5}px` }}>
+                <h2>{disp?.title}</h2>
+                {disp?.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
             </div>
+            }
         </div>
     </div>)
 }
