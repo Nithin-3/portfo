@@ -194,12 +194,16 @@ export default function Portfo() {
             {tog ? disp?.branch.map((e, i) => (
                 <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.6}px` }}>
                     <h2>{e.title}</h2>
-                    {e.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
+                    <ul>
+                        {e.description.split('\n').map((t, i) => <li key={i}>{t}</li>)}
+                    </ul>
                     {e.link && <a href={e.link} target='_blank' rel='noreferrer' >{e.linkTitle || e.link}</a>}
                 </div>
             )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.5}px` }}>
                 <h2>{disp?.title}</h2>
-                {disp?.description.split('\n').map((t, i) => <p key={i}>{t}</p>)}
+                <ul>
+                    {disp?.description.split('\n').map((t, i) => <li key={i}>{t}</li>)}
+                </ul>
             </div>
             }
         </div>

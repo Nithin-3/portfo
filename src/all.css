@@ -40,12 +40,13 @@ h2,
 h3,
 p,
 span,
-a {
+a,
+li {
     text-shadow:
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black,
-        1px 1px 0 black;
+        -1px -1px 1px black,
+        1px -1px 1px black,
+        -1px 1px 1px black,
+        1px 1px 1px black;
 }
 
 #main {
@@ -91,6 +92,16 @@ a {
 
 .aline>div {
     margin: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 20px;
+}
+
+.aline>div>ul li {
+    margin-bottom: 1.2rem;
+    text-indent: 1rem;
 }
 
 /* Azmuth menu */
