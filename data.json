@@ -1,17 +1,17 @@
 [
     {
         "title": "Hi, I'm Nithin",
-        "description": "A developer passionate about building apps, games, and web experiences using React Native, MERN stack, Unity, and Godot. I completed my B.Tech in Artificial Intelligence & Machine Learning, and I love solving real-world problems through code.",
+        "description": "A developer who enjoys building apps, games, system tools, and applications.\nI work with React Native, MERN stack, Unity, Godot, low-level C for Linux, always focusing on speed, privacy, and clean.\nI love experimenting with physics engines, WebRTC systems, models, and steganography tools.\nWhether it’s a mobile app, a game, or a Linux utility, I enjoy taking ideas from concept to a polished, working",
         "icon": "/portfo/svg/ben.svg",
         "branch": [
             {
                 "title": "Linux & Systems",
-                "description": "Comfortable working in Linux environments. I enjoy customizing my development tools, using terminal-based workflows, and diving into system-level problem solving.",
+                "description": "Comfortable working in Linux environments.\nI enjoy customizing my development tools, using terminal-based workflows, and diving into system-level problem solving.",
                 "icon": "/portfo/svg/linux.svg"
             },
             {
                 "title": "Physics Engine Learning",
-                "description": "Currently learning and experimenting with physics engines by building my own from scratch. This helps me understand core mechanics like collisions, forces, and movement in games.",
+                "description": "Currently learning and experimenting with physics engines by building my own from scratch.\nThis helps me understand core mechanics like collisions, forces, and movement in games.",
                 "icon": "/portfo/svg/physics.svg"
             }
         ]
@@ -22,17 +22,22 @@
         "icon": "/portfo/svg/app-dev.svg",
         "branch": [
             {
-                "title": "pandaDoc - Anonymous chat app",
-                "description": "A P2P-based anonymous chat app using WebRTC and React Native, ensuring private real-time communication.",
+                "title": "PandaDoc",
+                "description": "Privacy-first anonymous chat app built with Expo (React Native).\nDisguised as a document reader.\nUses WebRTC for video/audio streaming.\nNo data collection or encryption on server; all local.\nEach user has a unique UID for anonymous chat.",
                 "icon": "/portfo/svg/chat-app.svg",
                 "link": "https://github.com/Nithin-3/pandaDoc",
                 "linkTitle": "Google Play"
+            },
+            {
+                "title": "Civil Engineering Tools",
+                "description": "App for civil site attendance, stock, and site management.\nMonitors site progress, stock availability, generates logs and reports.\nTracks quantity of materials and employee attendance.",
+                "icon": "/portfo/svg/civil.svg"
             }
         ]
     },
     {
         "title": "Web Development",
-        "description": "Skilled in the MERN stack (MongoDB, Express, React, Node.js), I build full-stack web applications that are fast, scalable, and user-friendly.",
+        "description": "Skilled in the MERN stack (MongoDB, Express, React, Node.js).\nI build full-stack web applications that are fast, scalable, and user-friendly.",
         "icon": "/portfo/svg/web-dev.svg",
         "branch": [
             {
@@ -44,7 +49,7 @@
             },
             {
                 "title": "Checker – Staff Availability Tool",
-                "description": "Web tool to show staff availability (e.g., college or govt office) and track leave status.",
+                "description": "Web tool using ML model for face recognition.\nCaptures image every 15min, converts to grayscale, compresses with ffmpeg, computes average vector to recognize faces.\nBackend processes images and stores data in cloud.\nAlso integrated with Civil Engineering Tools app for reporting.",
                 "icon": "/portfo/svg/checker.svg",
                 "link": "https://github.com/HITMAN-AK/private_checker/",
                 "linkTitle": "Git Hub"
@@ -57,26 +62,53 @@
         "icon": "/portfo/svg/game-dev.svg",
         "branch": [
             {
+                "title": "Stick Man Fantasum Run",
+                "description": "2D endless platform runner game made in Unity.\nIncludes 5 power-up levels and a story mode.",
+                "icon": "/portfo/svg/stickman.svg"
+            },
+            {
+                "title": "Shutter Minds",
+                "description": "3D horror game in building environments made in Unity.",
+                "icon": "/portfo/svg/shutter.svg"
+            },
+            {
                 "title": "AntiBio Game",
-                "description": "An award-winning Godot game that educates players on antibiotic resistance.",
+                "description": "Award-winning Godot game educating players on antibiotic resistance.",
                 "icon": "/portfo/svg/antibio.svg"
             },
             {
                 "title": "Custom Physics Engine",
-                "description": "Built a physics engine as a personal learning project to understand collisions, gravity, and game mechanics.",
+                "description": "Built a personal physics engine to understand collisions, gravity, and game mechanics.",
                 "icon": "/portfo/svg/physics.svg"
             }
         ]
     },
     {
         "title": "AI/ML",
-        "description": "Graduated with a B.Tech in Artificial Intelligence & Machine Learning, with hands-on experience building intelligent systems.",
+        "description": "Graduated with a B.Tech in Artificial Intelligence & Machine Learning.\nHands-on experience building intelligent systems.",
         "icon": "/portfo/svg/ai-ml.svg",
         "branch": [
             {
                 "title": "PDF Summary System",
-                "description": "AI system that summarizes PDFs and allows users to query the content using NLP techniques.",
+                "description": "AI system that summarizes PDFs and allows users to query content using NLP techniques.",
                 "icon": "/portfo/svg/summary.svg"
+            },
+            {
+                "title": "Checker – Face Recognition",
+                "description": "ML model using CNN to recognize faces.\nImages captured every 15min, processed on cloud backend.",
+                "icon": "/portfo/svg/checker.svg"
+            }
+        ]
+    },
+    {
+        "title": "Linux Tools",
+        "description": "Lightweight system utilities written for Linux Wayland desktops.",
+        "icon": "/portfo/svg/linux.svg",
+        "branch": [
+            {
+                "title": "Echo-Meter",
+                "description": "Lightweight OSD and controller for brightness, volume, and microphone.\nWritten in C with no extra dependencies (GTK, config and style files).\nPerfect for tiling window managers lacking native OSD/controls.",
+                "icon": "/portfo/svg/echo.svg"
             }
         ]
     },
@@ -87,7 +119,7 @@
         "branch": [
             {
                 "title": "Anti-Theft Keychain Device",
-                "description": "A keychain-sized device that triggers alarm and vibration on phone and device when out of range via Bluetooth.",
+                "description": "Keychain-sized device triggers alarm and vibration when out of range via Bluetooth.",
                 "icon": "/portfo/svg/keychain.svg"
             }
         ]
@@ -99,7 +131,7 @@
         "branch": [
             {
                 "title": "Shell Shript",
-                "description": "Reverse shell script project using raw sockets to demonstrate RAT (Remote Access Tool) capabilities over networks.",
+                "description": "Reverse shell script project demonstrating RAT (Remote Access Tool) capabilities over networks using raw sockets.",
                 "icon": "/portfo/svg/terminal.svg",
                 "link": "https://github.com/Nithin-3/Shell-Shript",
                 "linkTitle": "Git Hub"
@@ -113,7 +145,7 @@
         "branch": [
             {
                 "title": "IMG2Wave",
-                "description": "A tool that converts an image into audio (waveform) to hide data, also modifies metadata for steganographic techniques.",
+                "description": "Tool converts image into audio waveform to hide data.\nAlso modifies metadata for steganographic techniques.",
                 "icon": "/portfo/svg/image-audio.svg",
                 "link": "https://github.com/Nithin-3/IMG2WAVE",
                 "linkTitle": "Git Hub"
@@ -122,7 +154,7 @@
     },
     {
         "title": "Education",
-        "description": "Completed my B.Tech in Artificial Intelligence & Machine Learning, equipped with skills in AI, app dev, web dev, and game development.",
+        "description": "Completed my B.Tech in Artificial Intelligence & Machine Learning.\nEquipped with skills in AI, app dev, web dev, and game development.",
         "icon": "/portfo/svg/education.svg",
         "branch": [
             {
@@ -133,4 +165,3 @@
         ]
     }
 ]
-
