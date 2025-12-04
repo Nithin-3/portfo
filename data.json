@@ -109,6 +109,12 @@
                 "title": "Echo-Meter",
                 "description": "Lightweight OSD and controller for brightness, volume, and microphone.\nWritten in C with no extra dependencies (GTK, config and style files).\nPerfect for tiling window managers lacking native OSD/controls.",
                 "icon": "/portfo/svg/echo.svg"
+            }, {
+                "title": "Shell Shript",
+                "description": "Reverse shell script project demonstrating RAT (Remote Access Tool) capabilities over networks using raw sockets.",
+                "icon": "/portfo/svg/terminal.svg",
+                "link": "https://github.com/Nithin-3/Shell-Shript",
+                "linkTitle": "Git Hub"
             }
         ]
     },
@@ -121,20 +127,6 @@
                 "title": "Anti-Theft Keychain Device",
                 "description": "Keychain-sized device triggers alarm and vibration when out of range via Bluetooth.",
                 "icon": "/portfo/svg/keychain.svg"
-            }
-        ]
-    },
-    {
-        "title": "Security & Networking",
-        "description": "Projects focused on reverse engineering, socket programming, and system-level scripting.",
-        "icon": "/portfo/svg/security.svg",
-        "branch": [
-            {
-                "title": "Shell Shript",
-                "description": "Reverse shell script project demonstrating RAT (Remote Access Tool) capabilities over networks using raw sockets.",
-                "icon": "/portfo/svg/terminal.svg",
-                "link": "https://github.com/Nithin-3/Shell-Shript",
-                "linkTitle": "Git Hub"
             }
         ]
     },
