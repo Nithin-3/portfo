@@ -26,12 +26,17 @@
                 "description": "Privacy-first anonymous chat app built with Expo (React Native).\nDisguised as a document reader.\nUses WebRTC for video/audio streaming.\nNo data collection or encryption on server; all local.\nEach user has a unique UID for anonymous chat.",
                 "icon": "/portfo/svg/chat-app.svg",
                 "link": "https://github.com/Nithin-3/pandaDoc",
-                "linkTitle": "Google Play"
+                "linkTitle": "GitHub"
             },
             {
                 "title": "Civil Engineering Tools",
                 "description": "App for civil site attendance, stock, and site management.\nMonitors site progress, stock availability, generates logs and reports.\nTracks quantity of materials and employee attendance.",
                 "icon": "/portfo/svg/civil.svg"
+            },{
+                "title":"PdFview",
+                "description":"App designed for managing PDF files on the device.\nprovides file previews without opening them.\nviewing a PDF, you can slide left or right to navigate between pages.\nstorage permission to read PDF files from the device.\ndynamic theming based on device settings.",
+                "link": "https://github.com/Nithin-3/pandaDoc",
+                "linkTitle": "GitHub"
             }
         ]
     },
@@ -109,7 +114,8 @@
                 "title": "Echo-Meter",
                 "description": "Lightweight OSD and controller for brightness, volume, and microphone.\nWritten in C with no extra dependencies (GTK, config and style files).\nPerfect for tiling window managers lacking native OSD/controls.",
                 "icon": "/portfo/svg/echo.svg"
-            }, {
+            },
+            {
                 "title": "Shell Shript",
                 "description": "Reverse shell script project demonstrating RAT (Remote Access Tool) capabilities over networks using raw sockets.",
                 "icon": "/portfo/svg/terminal.svg",
