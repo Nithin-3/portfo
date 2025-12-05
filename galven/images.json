@@ -1,19 +1,67 @@
 [
     {
-        "image":"icon.png",
-        "link":"",
-        "content":"PandaDoc is a privacy-first, anonymous chat application built with Expo (React Native) for Android. The app is cleverly disguised as a document reader and lists documents available on your device"
+        "cat": "app",
+        "list": [
+            {
+                "type": "vid",
+                "head": "pandaDoc",
+                "source": "/portfo/galven/pandaDoc.mp4"
+            },
+            {
+                "type": "img",
+                "head": "PdFview",
+                "source": [
+                    "https://raw.githubusercontent.com/Nithin-3/PdFview/main/assets/Screenshot_20251129_100533_PdFview.jpg",
+                    "https://raw.githubusercontent.com/Nithin-3/PdFview/main/assets/Screenshot_20251129_100636_PdFview.jpg",
+                    "https://raw.githubusercontent.com/Nithin-3/PdFview/main/assets/Screenshot_20251129_100652_PdFview.jpg"
+                ]
+            }
+        ]
     },
     {
-        "image":"intent.jpg",
-        "content":"Completed an internship in app and web development, gaining hands-on experience with real-world projects. Worked on front-end and back-end tasks, enhancing both technical and teamwork skills."
+        "cat": "web",
+        "list": [
+            {
+                "type": "vid",
+                "head": "t2t",
+                "source": "/portfo/galven/t2t.mp4"
+            },
+            {
+                "type": "vid",
+                "head": "checker",
+                "source": "https://nithin-3.github.io/port/video/oa.mp4"
+            }
+        ]
     },
     {
-        "image":"antibio.jpg",
-        "content":"Winner of the Spatial Prize in a game development contest focused on public health. Developed an engaging awareness game highlighting the dangers of super bacteria"
+        "cat": "linux tools",
+        "list": [
+            {
+                "type": "vid",
+                "head": "Lightweight OSD and control utility for volume, brightness, and mic level; written in C for tiling window manager",
+                "source": "/portfo/galven/echo-meter.mp4"
+            }
+        ]
     },
     {
-        "image":"reimagine.jpg",
-        "content":"Participated in Reimagine IGDC, a 3-day national game development hackathon. Collaborated on a creative game prototype under intense time constraints"
+        "cat": "certificate",
+        "list": [
+            {
+                "type": "img",
+                "head": "Winner of the Spatial Prize for a public health game about super bacteria",
+                "source": "/portfo/galven/antibio.jpg"
+            },
+            {
+                "type": "img",
+                "head": "Took part in Reimagine IGDC, a 3-day national game hackathon, creating a game prototype",
+                "source": "/portfo/galven/reimagine.jpg"
+            },
+            {
+                "type": "img",
+                "head": "App & web development intern with hands-on experience in real projects, both front-end and back-end",
+                "source": "/portfo/galven/intent.jpg"
+            }
+        ]
     }
 ]
+

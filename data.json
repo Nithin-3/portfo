@@ -1,165 +1,193 @@
 [
-    {
-        "title": "Hi, I'm Nithin",
-        "description": "A developer who enjoys building apps, games, system tools, and applications.\nI work with React Native, MERN stack, Unity, Godot, low-level C for Linux, always focusing on speed, privacy, and clean.\nI love experimenting with physics engines, WebRTC systems, models, and steganography tools.\nWhether it’s a mobile app, a game, or a Linux utility, I enjoy taking ideas from concept to a polished, working",
-        "icon": "/portfo/svg/ben.svg",
-        "branch": [
-            {
-                "title": "Linux & Systems",
-                "description": "Comfortable working in Linux environments.\nI enjoy customizing my development tools, using terminal-based workflows, and diving into system-level problem solving.",
-                "icon": "/portfo/svg/linux.svg"
-            },
-            {
-                "title": "Physics Engine Learning",
-                "description": "Currently learning and experimenting with physics engines by building my own from scratch.\nThis helps me understand core mechanics like collisions, forces, and movement in games.",
-                "icon": "/portfo/svg/physics.svg"
-            }
-        ]
-    },
-    {
-        "title": "App Development",
-        "description": "I develop cross-platform mobile applications using React Native and Expo, delivering smooth and responsive experiences.",
-        "icon": "/portfo/svg/app-dev.svg",
-        "branch": [
-            {
-                "title": "PandaDoc",
-                "description": "Privacy-first anonymous chat app built with Expo (React Native).\nDisguised as a document reader.\nUses WebRTC for video/audio streaming.\nNo data collection or encryption on server; all local.\nEach user has a unique UID for anonymous chat.",
-                "icon": "/portfo/svg/chat-app.svg",
-                "link": "https://github.com/Nithin-3/pandaDoc",
-                "linkTitle": "GitHub"
-            },
-            {
-                "title": "Civil Engineering Tools",
-                "description": "App for civil site attendance, stock, and site management.\nMonitors site progress, stock availability, generates logs and reports.\nTracks quantity of materials and employee attendance.",
-                "icon": "/portfo/svg/civil.svg"
-            },{
-                "title":"PdFview",
-                "description":"App designed for managing PDF files on the device.\nprovides file previews without opening them.\nviewing a PDF, you can slide left or right to navigate between pages.\nstorage permission to read PDF files from the device.\ndynamic theming based on device settings.",
-                "link": "https://github.com/Nithin-3/pandaDoc",
-                "linkTitle": "GitHub"
-            }
-        ]
-    },
-    {
-        "title": "Web Development",
-        "description": "Skilled in the MERN stack (MongoDB, Express, React, Node.js).\nI build full-stack web applications that are fast, scalable, and user-friendly.",
-        "icon": "/portfo/svg/web-dev.svg",
-        "branch": [
-            {
-                "title": "t2t – Omegle Clone",
-                "description": "A personal project: real-time video/text chat web app inspired by Omegle, built with React and WebRTC.",
-                "icon": "/portfo/svg/omagale.svg",
-                "link": "https://github.com/Nithin-3/t2t",
-                "linkTitle": "Git Hub"
-            },
-            {
-                "title": "Checker – Staff Availability Tool",
-                "description": "Web tool using ML model for face recognition.\nCaptures image every 15min, converts to grayscale, compresses with ffmpeg, computes average vector to recognize faces.\nBackend processes images and stores data in cloud.\nAlso integrated with Civil Engineering Tools app for reporting.",
-                "icon": "/portfo/svg/checker.svg",
-                "link": "https://github.com/HITMAN-AK/private_checker/",
-                "linkTitle": "Git Hub"
-            }
-        ]
-    },
-    {
-        "title": "Game Development",
-        "description": "I create 2D and 3D games using Unity and Godot, exploring everything from educational to experimental gameplay.",
-        "icon": "/portfo/svg/game-dev.svg",
-        "branch": [
-            {
-                "title": "Stick Man Fantasum Run",
-                "description": "2D endless platform runner game made in Unity.\nIncludes 5 power-up levels and a story mode.",
-                "icon": "/portfo/svg/stickman.svg"
-            },
-            {
-                "title": "Shutter Minds",
-                "description": "3D horror game in building environments made in Unity.",
-                "icon": "/portfo/svg/shutter.svg"
-            },
-            {
-                "title": "AntiBio Game",
-                "description": "Award-winning Godot game educating players on antibiotic resistance.",
-                "icon": "/portfo/svg/antibio.svg"
-            },
-            {
-                "title": "Custom Physics Engine",
-                "description": "Built a personal physics engine to understand collisions, gravity, and game mechanics.",
-                "icon": "/portfo/svg/physics.svg"
-            }
-        ]
-    },
-    {
-        "title": "AI/ML",
-        "description": "Graduated with a B.Tech in Artificial Intelligence & Machine Learning.\nHands-on experience building intelligent systems.",
-        "icon": "/portfo/svg/ai-ml.svg",
-        "branch": [
-            {
-                "title": "PDF Summary System",
-                "description": "AI system that summarizes PDFs and allows users to query content using NLP techniques.",
-                "icon": "/portfo/svg/summary.svg"
-            },
-            {
-                "title": "Checker – Face Recognition",
-                "description": "ML model using CNN to recognize faces.\nImages captured every 15min, processed on cloud backend.",
-                "icon": "/portfo/svg/checker.svg"
-            }
-        ]
-    },
-    {
-        "title": "Linux Tools",
-        "description": "Lightweight system utilities written for Linux Wayland desktops.",
-        "icon": "/portfo/svg/linux.svg",
-        "branch": [
-            {
-                "title": "Echo-Meter",
-                "description": "Lightweight OSD and controller for brightness, volume, and microphone.\nWritten in C with no extra dependencies (GTK, config and style files).\nPerfect for tiling window managers lacking native OSD/controls.",
-                "icon": "/portfo/svg/echo.svg"
-            },
-            {
-                "title": "Shell Shript",
-                "description": "Reverse shell script project demonstrating RAT (Remote Access Tool) capabilities over networks using raw sockets.",
-                "icon": "/portfo/svg/terminal.svg",
-                "link": "https://github.com/Nithin-3/Shell-Shript",
-                "linkTitle": "Git Hub"
-            }
-        ]
-    },
-    {
-        "title": "Hardware & IoT Projects",
-        "description": "I enjoy prototyping hardware solutions that integrate with software and mobile apps.",
-        "icon": "/portfo/svg/iot.svg",
-        "branch": [
-            {
-                "title": "Anti-Theft Keychain Device",
-                "description": "Keychain-sized device triggers alarm and vibration when out of range via Bluetooth.",
-                "icon": "/portfo/svg/keychain.svg"
-            }
-        ]
-    },
-    {
-        "title": "Steganography & Media Processing",
-        "description": "Projects focused on embedding and hiding data within media, manipulating files, and altering metadata.",
-        "icon": "/portfo/svg/media.svg",
-        "branch": [
-            {
-                "title": "IMG2Wave",
-                "description": "Tool converts image into audio waveform to hide data.\nAlso modifies metadata for steganographic techniques.",
-                "icon": "/portfo/svg/image-audio.svg",
-                "link": "https://github.com/Nithin-3/IMG2WAVE",
-                "linkTitle": "Git Hub"
-            }
-        ]
-    },
-    {
-        "title": "Education",
-        "description": "Completed my B.Tech in Artificial Intelligence & Machine Learning.\nEquipped with skills in AI, app dev, web dev, and game development.",
-        "icon": "/portfo/svg/education.svg",
-        "branch": [
-            {
-                "title": "AI/ML Specialization",
-                "description": "Specialized in AI, machine learning, and data science topics during my undergraduate studies.",
-                "icon": "/portfo/svg/ai-focus.svg"
-            }
-        ]
-    }
+  {
+    "title": "Hi, I'm Nithin",
+    "description": "A developer who enjoys building apps, games, system tools, and applications.\nI work with React Native, MERN stack, Unity, Godot, and low-level C for Linux, always focusing on speed, privacy, and clean architecture.\nI love experimenting with physics engines, WebRTC systems, ML models, and steganography tools.\nWhether it’s a mobile app, a game, or a Linux utility, I enjoy taking ideas from concept to a polished, working product.",
+    "icon": "/portfo/svg/ben.svg",
+    "branch": [
+      {
+        "title": "Linux & Systems",
+        "description": "Comfortable working in Linux environments.\nI enjoy customizing development tools, using terminal-based workflows, and diving into system-level problem solving.",
+        "icon": "/portfo/svg/linux.svg"
+      },
+      {
+        "title": "Physics Engine Learning",
+        "description": "Experimenting with physics engines by building one from scratch.\nHelps understand collisions, forces, gravity, and movement in games.",
+        "icon": "/portfo/svg/physics.svg"
+      }
+    ]
+  },
+
+  {
+    "title": "App Development",
+    "description": "I develop cross-platform mobile applications using React Native and Expo, delivering smooth and responsive experiences.",
+    "icon": "/portfo/svg/app-dev.svg",
+    "branch": [
+      {
+        "title": "PandaDoc",
+        "description": "Privacy-first anonymous chat app built with Expo (React Native).\nDisguised as a document reader.\nUses WebRTC for video/audio.\nNo data stored on server; all local.\nUsers identified only by UID.",
+        "icon": "/portfo/svg/chat-app.svg",
+        "link": "https://github.com/Nithin-3/pandaDoc",
+        "linkTitle": "GitHub"
+      },
+      {
+        "title": "Civil Engineering Tools",
+        "description": "Mobile app for site attendance, stock, and management.\nTracks material quantities, employee logs, reports, and site progress.",
+        "icon": "/portfo/svg/civil.svg"
+      },
+      {
+        "title": "PdFview",
+        "description": "App for managing and previewing PDF files.\nSlide left/right to navigate pages.\nRequires storage permission.\nSupports dynamic theming.",
+        "icon": "/portfo/svg/pdfview.svg",
+        "link": "https://github.com/Nithin-3/PdFview",
+        "linkTitle": "GitHub"
+      }
+    ]
+  },
+
+  {
+    "title": "Web Development",
+    "description": "Skilled in the MERN stack.\nI build full-stack web applications that are fast, scalable, and user-friendly.",
+    "icon": "/portfo/svg/web-dev.svg",
+    "branch": [
+      {
+        "title": "t2t – Omegle Clone",
+        "description": "Real-time video/text web app inspired by Omegle.\nBuilt using React and WebRTC.",
+        "icon": "/portfo/svg/omagale.svg",
+        "link": "https://github.com/Nithin-3/t2t",
+        "linkTitle": "GitHub"
+      },
+      {
+        "title": "Checker – Staff Availability Tool",
+        "description": "Web tool using ML for face recognition.\nCaptures image every 15min, compresses with ffmpeg, processes vectors for identity.\nBackend cloud storage.\nIntegrated with Civil Engineering Tools app.",
+        "icon": "/portfo/svg/checker.svg",
+        "link": "https://github.com/HITMAN-AK/private_checker/",
+        "linkTitle": "GitHub"
+      }
+    ]
+  },
+
+  {
+    "title": "Game Development",
+    "description": "I create 2D and 3D games using Unity and Godot, from educational to experimental gameplay.",
+    "icon": "/portfo/svg/game-dev.svg",
+    "branch": [
+      {
+        "title": "Stick Man Fantasum Run",
+        "description": "2D endless runner made in Unity.\nIncludes 5 power-up levels and a story mode.",
+        "icon": "/portfo/svg/stickman.svg"
+      },
+      {
+        "title": "Shutter Minds",
+        "description": "3D horror game set in building environments.\nDeveloped using Unity.",
+        "icon": "/portfo/svg/shutter.svg"
+      },
+      {
+        "title": "AntiBio Game",
+        "description": "Award-winning Godot game educating players on antibiotic resistance.",
+        "icon": "/portfo/svg/antibio.svg"
+      },
+      {
+        "title": "Custom Physics Engine",
+        "description": "Personal physics engine to understand collision detection, gravity, and core game mechanics.",
+        "icon": "/portfo/svg/physics.svg"
+      }
+    ]
+  },
+
+  {
+    "title": "AI/ML",
+    "description": "Graduated with a B.Tech in Artificial Intelligence & Machine Learning.\nHands-on experience building intelligent systems.",
+    "icon": "/portfo/svg/ai-ml.svg",
+    "branch": [
+      {
+        "title": "PDF Summary System",
+        "description": "AI system that summarizes PDFs and supports content query using NLP techniques.",
+        "icon": "/portfo/svg/summary.svg"
+      },
+      {
+        "title": "Checker – Face Recognition",
+        "description": "CNN-based ML model for face recognition.\nCaptures images every 15min and processes on cloud backend.",
+        "icon": "/portfo/svg/checker.svg"
+      }
+    ]
+  },
+
+  {
+    "title": "Linux Tools",
+    "description": "Lightweight system utilities written for Linux Wayland desktops.",
+    "icon": "/portfo/svg/linux.svg",
+    "branch": [
+      {
+        "title": "Echo-Meter",
+        "description": "Lightweight OSD controller for brightness, volume, and microphone.\nWritten in C with no external dependencies.\nGreat for tiling window managers.",
+        "icon": "/portfo/svg/echo.svg"
+      },
+      {
+        "title": "shell-shript",
+        "description": "Reverse shell project demonstrating RAT capabilities using raw sockets.\nSupports remote access over networks.",
+        "icon": "/portfo/svg/terminal.svg",
+        "link": "https://github.com/Nithin-3/Shell-Shript",
+        "linkTitle": "GitHub"
+      }
+    ]
+  },
+
+  {
+    "title": "Experience",
+    "description": "Industry experience building real-world solutions.",
+    "icon": "/portfo/svg/work.svg",
+    "branch": [
+      {
+        "title": "Web & App Development Intern",
+        "description": "Sri Rhaj Builders (02/2024 – 04/2024)\n Developed a company portfolio website.\n Built a site management mobile app with admin control.\n`Enabled attendance tracking and real-time stock updates.",
+        "icon": "/portfo/svg/company.svg"
+      }
+    ]
+  },
+
+  {
+    "title": "Education",
+    "description": "Bachelor of Technology in Artificial Intelligence & Machine Learning.",
+    "icon": "/portfo/svg/education.svg",
+    "branch": [
+      {
+        "title": "B.Tech Artificial Intelligence & Machine Learning",
+        "description": "K Ramakrishnan College Of Technology\nGraduating 05/2025 — Trichy, India",
+        "icon": "/portfo/svg/degree.svg"
+      }
+    ]
+  },
+
+  {
+    "title": "Skills",
+    "description": "Focus on speed, privacy, and clean architecture.\nTools used for building apps, games, and systems.",
+    "icon": "/portfo/svg/skills.svg",
+    "branch": [
+      {
+        "title": "Languages",
+        "description": "JavaScript / TypeScript\nC, C++, Java",
+        "icon": "/portfo/svg/code.svg"
+      },
+      {
+        "title": "Frameworks",
+        "description": "React, React Native\nNode.js, Express.js\nSpring Boot",
+        "icon": "/portfo/svg/framework.svg"
+      },
+      {
+        "title": "Game Dev",
+        "description": "Unity Engine\nGodot Engine",
+        "icon": "/portfo/svg/game.svg"
+      },
+      {
+        "title": "Databases",
+        "description": "MongoDB, MySQL, SQLite, Realm",
+        "icon": "/portfo/svg/db.svg"
+      },
+      {
+        "title": "Other",
+        "description": "Machine Learning\nWebRTC systems\nLinux & System tools",
+        "icon": "/portfo/svg/tools.svg"
+      }
+    ]
+  }
 ]
