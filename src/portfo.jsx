@@ -82,6 +82,7 @@ export default function Portfo() {
             .then((res) => res.json())
             .then((jsonData) => {
                 sdata(jsonData)
+                setdisp(jsonData[0])
             });
     }, []);
 
@@ -192,17 +193,17 @@ export default function Portfo() {
         </div>
         <div className="aline" id="aline" ref={aline}>
             {tog ? disp?.branch.map((e, i) => (
-                <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.6}px` }}>
+                <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain` }}>
                     <h2>{e.title}</h2>
                     <ul>
-                        {e.description.split('\n').map((t, i) => <li key={i}>{t}</li>)}
+                        {e.description.split('\n').map((t, i) => <li key={i}>▸ {t}</li>)}
                     </ul>
                     {e.link && <a href={e.link} target='_blank' rel='noreferrer' >{e.linkTitle || e.link}</a>}
                 </div>
-            )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain`, maxWidth: `${dimensions * 0.5}px` }}>
+            )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain` }}>
                 <h2>{disp?.title}</h2>
                 <ul>
-                    {disp?.description.split('\n').map((t, i) => <li key={i}>{t}</li>)}
+                    {disp?.description.split('\n').map((t, i) => <li key={i}>▸ {t}</li>)}
                 </ul>
             </div>
             }

@@ -35,18 +35,10 @@ body {
 }
 
 /* Apply text shadow ONLY to text elements */
-h1,
-h2,
-h3,
-p,
-span,
-a,
-li {
+:is(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, em, small, label) {
     text-shadow:
-        -1px -1px 1px black,
-        1px -1px 1px black,
-        -1px 1px 1px black,
-        1px 1px 1px black;
+        0 0 4px black,
+        0 0 8px black;
 }
 
 #main {
@@ -55,9 +47,7 @@ li {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    isolation: isolate;
     overscroll-behavior: none;
-    /* forces stacking context */
     overscroll-behavior: none;
     overflow: hidden;
     touch-action: none;
@@ -78,11 +68,12 @@ li {
     z-index: 2;
 }
 
-/* Apply drop-shadow only to visible items */
-.aline div,
+/* Allow drop-shadow only on images */
 .aline img {
     filter: drop-shadow(0 0 35px var(--fg));
 }
+
+
 
 .aline a {
     text-decoration: underline;
@@ -91,17 +82,25 @@ li {
 }
 
 .aline>div {
-    margin: 20px;
+    margin: clamp(8px, 1.6vw, 24px);
+    max-width: clamp(40ch, 60ch + 5vw, 75ch);
+    isolation: auto;
+    filter: none;
+}
+
+.aline>div>h2 {
+    font-size: clamp(1.3rem, 3vw, 3rem);
 }
 
 ul {
     list-style-type: none;
-    margin: 20px;
 }
 
 .aline>div>ul li {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.5rem;
     text-indent: 1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+
 }
 
 /* Azmuth menu */
@@ -207,4 +206,69 @@ p {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 1.6s ease, transform 0.4s ease;
+}
+
+/* Wrapper */
+.galven-root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    padding: 2vw;
+    justify-content: center;
+}
+
+/* Each category section */
+.galven-section>h2 {
+    font-size: clamp(1.4rem, 3vw, 2.8rem);
+    text-align: center;
+    margin-bottom: 2vh;
+    color: var(--fgL1);
+}
+
+/* Grid layout for each list of media */
+.galven-grid {
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: start;
+    max-height: 90vh;
+    overflow: scroll;
+}
+
+/* Card wrapper */
+.galven-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: hsl(0 0% 100% / 0.02);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+    padding: 1vw;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px hsl(0 0% 0% / 0.4);
+    transition: transform .3s ease;
+}
+
+.galven-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Media styling (img or video) */
+.galven-card img,
+.galven-card video {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Title under media */
+.galven-card h3 {
+    margin: 0;
+    font-size: clamp(0.9rem, 1.2rem, 1.6rem);
+    text-align: center;
+    color: var(--fgL2);
+    line-height: 1.3;
 }
