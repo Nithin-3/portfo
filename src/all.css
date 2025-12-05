@@ -25,6 +25,10 @@ body {
     scrollbar-width: none;
 }
 
+body {
+    background: url('https://nithin-3.github.io/portfo/stars.png');
+}
+
 /* BASIC RESET */
 * {
     margin: 0;
@@ -51,6 +55,7 @@ body {
     overscroll-behavior: none;
     overflow: hidden;
     touch-action: none;
+    background: url('https://nithin-3.github.io/portfo/stars.png');
 }
 
 #omnit {
@@ -107,14 +112,24 @@ ul {
 .azmuth {
     position: absolute;
     top: 5vh;
-    right: 0;
+    right: 5vw;
     background: none;
 }
 
 .azmuth span {
     cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.azmuth span>p {
+    color: var(--bg);
+    text-shadow: 0px 0px 0px;
     position: absolute;
-    right: 5vw;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(0.6rem, 1vw, 1rem);
 }
 
 /* Rotating menu */
@@ -158,6 +173,18 @@ ul {
 h2,
 p {
     text-align: center;
+}
+
+.msg {
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+}
+
+.pag {
+    position: absolute;
+    top: 2%;
+    left: 2%;
 }
 
 /* galvan base */

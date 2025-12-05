@@ -33,37 +33,50 @@ export default function Portfo() {
     });
     const shape = useMemo(() => {
         const s = new Shape();
-        s.moveTo(20, 0)
+        s.moveTo(34, 15)
         s.lineTo(50, 0)
         s.lineTo(100, 100)
         s.lineTo(50, 200)
-        s.lineTo(20, 200)
+        s.lineTo(34, 185)
         s.lineTo(90, 100)
         s.closePath()
         return s
     }, []);
     const shape2 = useMemo(() => {
         const s = new Shape();
-        s.moveTo(80, 0)
-        s.lineTo(50, 0)
+        s.moveTo(64, 20)
+        s.lineTo(45, 0)
         s.lineTo(0, 100)
         s.lineTo(50, 200)
-        s.lineTo(80, 200)
+        s.lineTo(64, 185)
         s.lineTo(10, 100)
         s.closePath()
         return s
     }, []);
 
+    const shape3 = useMemo(() => {
+        const s = new Shape();
+        s.moveTo(15, 15);
+        s.lineTo(177, 20);
+        s.lineTo(180, 185);
+        s.lineTo(15, 184);
+        s.closePath();
+        return s;
+    }, []);
     const geom = useMemo(() => new ShapeGeometry(shape), [shape]);
     const geomMir = useMemo(() => new ShapeGeometry(shape2), [shape2]);
+    const box = useMemo(() => new ShapeGeometry(shape3), [shape3]);
     const mat = useMemo(() => new MeshBasicMaterial({ color, transparent: true }), [color]);
+    const matB = useMemo(() => new MeshBasicMaterial({
+        color: "#000000",
+    }), []);
     const { nodes, materials } = useGLTF("/portfo/scene.glb");
 
     function Model() {
         return (
             <a.group rotation-x={rx} rotation-z={rz} position-y={py} position-z={pz}>
                 <group rotation={[Math.PI / 2, 0, 0]} scale={9.371}>
-                    <mesh geometry={nodes.Circle001.geometry} material={materials['Material.002']} />
+                    {/* <mesh geometry={nodes.Circle001.geometry} material={materials['Material.002']} /> */}
                     <mesh geometry={nodes.Circle001_1.geometry} material={materials.omni} />
                 </group>
                 <group scale={0.015} position={[-0.7, -1.5, 1]} >
@@ -72,6 +85,9 @@ export default function Portfo() {
                     </a.group>
                     <a.group position-x={move}>
                         <mesh geometry={geomMir} material={mat} />
+                    </a.group>
+                    <a.group position-z={-1} position-x={-50}>
+                        <mesh geometry={box} material={matB} />
                     </a.group>
                 </group>
             </a.group>
@@ -165,11 +181,13 @@ export default function Portfo() {
             return !p;
         });
         srot(prev => prev === Math.PI * -0.3 ? Math.PI * 0.01 : Math.PI * -0.3);
+        vis && setvis(false)
     }
 
     return (<div id="main" onClick={togelBranch}>
         <div className="azmuth" >
             <span onClick={(e) => { e.stopPropagation(); setvis(p => !p) }}>
+                <p>click</p>
                 <img src={azmuth} alt='Azmuth' height={dimensions * 0.1} width={dimensions * 0.1} />
             </span>
             <div className={`det ${vis ? "open" : ''}`} >
@@ -208,5 +226,8 @@ export default function Portfo() {
             </div>
             }
         </div>
+
+        <p className='pag'>{`${lstIdx.current + 1} -↻- ${data.length}`}</p>
+        <p className='msg'>scroll & click</p>
     </div>)
 }
