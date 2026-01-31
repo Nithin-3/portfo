@@ -138,6 +138,7 @@ export default function Portfo() {
         const onWheel = (e) => {
             e.preventDefault();
             deltaBuffer += Math.sign(e.deltaY) * (Math.pow(Math.min(Math.abs(e.deltaY), 80) / 80, 2)) * 1;
+            if (!rafId) rafId = requestAnimationFrame(loop);
         };
 
         const onTouchStart = (e) => {
@@ -147,13 +148,13 @@ export default function Portfo() {
         const onTouchMove = (e) => {
             const delta = touchStartY - e.touches[0].clientY;
             touchStartY = e.touches[0].clientY;
-            deltaBuffer += delta * 0.01; // adjust sensitivity
+            deltaBuffer += delta * 0.01;
+            if (!rafId) rafId = requestAnimationFrame(loop);
         };
 
         const loop = () => {
-            // Apply delta with friction for smooth motion
             srlPer.current += deltaBuffer;
-            deltaBuffer *= 0.56; // friction
+            deltaBuffer *= 0.56;
 
             const pct = ((srlPer.current % 100) + 100) % 100;
             update(pct);
@@ -203,28 +204,39 @@ export default function Portfo() {
             </div>
         </div>
         <div id="omnit" style={{ height: `${dimensions}px` }}>
-            <Canvas style={{ width: "100%", height: "100%" }} dpr={Math.min(window.devicePixelRatio, 1.5)}>
+            <Canvas style={{ width: "100%", height: "100%" }} dpr={1.0} frameloop="always" >
                 <ambientLight intensity={10} />
                 <Model />
             </Canvas>
 
         </div>
         <div className="aline" id="aline" ref={aline}>
-            {tog ? disp?.branch.map((e, i) => (
-                <div key={i} style={{ background: `url(${e.icon}) no-repeat center/contain` }}>
-                    <h2>{e.title}</h2>
-                    <ul>
-                        {e.description.split('\n').map((t, i) => <li key={i}>▸ {t}</li>)}
+            {tog ? (
+                disp?.branch?.map((e, i) => (
+                    <div key={i} className="hud-item" id={`project-${i}`} style={{ "--icon": `url(${e.icon})` }}>
+                        <h2>{e.title}</h2>
+                        <ul className="hud-list">
+                            {e.description.split('\n').map((t, idx) => (
+                                <li key={idx} className="hud-li">{t}</li>
+                            ))}
+                        </ul>
+                        {e.link && (
+                            <a href={e.link} target="_blank" rel="noreferrer" className="hud-link" id={`link-${i}`}>
+                                {e.linkTitle || e.link}
+                            </a>
+                        )}
+                    </div>
+                ))
+            ) : disp && (
+                <div className="hud-item main-hud" id="main-project" style={{ "--icon": `url(${disp.icon})` }}>
+                    <h2>{disp.title}</h2>
+                    <ul className="hud-list">
+                        {disp.description.split('\n').map((t, i) => (
+                            <li key={i} className="hud-li">{t}</li>
+                        ))}
                     </ul>
-                    {e.link && <a href={e.link} target='_blank' rel='noreferrer' >{e.linkTitle || e.link}</a>}
                 </div>
-            )) : <div style={{ background: `url(${disp?.icon}) no-repeat center/contain` }}>
-                <h2>{disp?.title}</h2>
-                <ul>
-                    {disp?.description.split('\n').map((t, i) => <li key={i}>▸ {t}</li>)}
-                </ul>
-            </div>
-            }
+            )}
         </div>
 
         <p className='pag'>{`${lstIdx.current + 1} -↻- ${data.length}`}</p>
