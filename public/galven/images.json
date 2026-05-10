@@ -1,5 +1,20 @@
 [
     {
+        "cat": "GAME: certificate",
+        "list": [
+            {
+                "type": "img",
+                "head": "Winner of the Spatial Prize for a public health game about super bacteria",
+                "source": "/portfo/galven/antibio.jpg"
+            },
+            {
+                "type": "img",
+                "head": "Took part in Reimagine IGDC, a 3-day national game hackathon, creating a game prototype",
+                "source": "/portfo/galven/reimagine.jpg"
+            }
+	]
+    },
+    {
         "cat": "app",
         "list": [
             {
@@ -40,26 +55,6 @@
                 "type": "vid",
                 "head": "Lightweight OSD and control utility for volume, brightness, and mic level; written in C for tiling window manager",
                 "source": "/portfo/galven/echo-meter.mp4"
-            }
-        ]
-    },
-    {
-        "cat": "certificate",
-        "list": [
-            {
-                "type": "img",
-                "head": "Winner of the Spatial Prize for a public health game about super bacteria",
-                "source": "/portfo/galven/antibio.jpg"
-            },
-            {
-                "type": "img",
-                "head": "Took part in Reimagine IGDC, a 3-day national game hackathon, creating a game prototype",
-                "source": "/portfo/galven/reimagine.jpg"
-            },
-            {
-                "type": "img",
-                "head": "App & web development intern with hands-on experience in real projects, both front-end and back-end",
-                "source": "/portfo/galven/intent.jpg"
             }
         ]
     }
