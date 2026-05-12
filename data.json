@@ -1,7 +1,7 @@
 [
   {
     "title": "Nithin",
-    "description": "Currently at IACG, Hyderabad, India.\nBuilding apps, games, system tools, and intelligent systems.\nReact Native · MERN · Unity · Godot · Low-level C · WebRTC · ML",
+    "description": "Currently at IACG, Hyderabad, India.\nBuilding apps, games, system tools, and intelligent systems.\nUnity · Godot · React Native · MERN · Low-level C · WebRTC · ML",
     "icon": "/portfo/svg/ben.svg",
     "branch": [
       {
@@ -24,7 +24,7 @@
 
   {
     "title": "Game Development",
-    "description": "2D and 3D games using Unity and Godot — from award-winning educational games to experimental 3D horror.\nAlso building a custom physics engine from scratch.",
+    "description": "2D and 3D games using Unity and Godot — \nAlso building a custom physics engine from scratch.",
     "icon": "/portfo/svg/game-dev.svg",
     "priority": true,
     "branch": [
@@ -167,7 +167,7 @@
       },
       {
         "title": "Specializations",
-        "description": "Machine Learning\nWebRTC systems\nLinux & system tools\nSteganography",
+        "description": "Machine Learning\nLinux & system tools\nSteganography",
         "icon": "/portfo/svg/tools.svg"
       }
     ]
