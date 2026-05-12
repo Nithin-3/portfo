@@ -24,29 +24,34 @@
 
   {
     "title": "Game Development",
-    "description": "2D and 3D games using Unity and Godot — \nAlso building a custom physics engine from scratch.",
+    "description": "2D and 3D games using Unity and Godot —\nAlso building a custom physics engine from scratch.",
     "icon": "/portfo/svg/game-dev.svg",
     "priority": true,
+    "order": 1,
     "branch": [
       {
-        "title": "AntiBio Game",
+        "title": "AntiBio",
         "description": "Award-winning Godot game educating players on antibiotic resistance.",
-        "icon": "/portfo/svg/antibio.svg"
+        "icon": "/portfo/svg/antibio.svg",
+        "priority": true
       },
       {
         "title": "Stick Man Fantasum Run",
         "description": "2D endless runner in Unity.\n5 power-up levels and a story mode.",
-        "icon": "/portfo/svg/stickman.svg"
+        "icon": "/portfo/svg/stickman.svg",
+        "priority": true
       },
       {
         "title": "Shutter Minds",
         "description": "3D horror game set in building environments.\nDeveloped in Unity.",
-        "icon": "/portfo/svg/shutter.svg"
+        "icon": "/portfo/svg/shutter.svg",
+        "priority": true
       },
       {
         "title": "Custom Physics Engine",
         "description": "Personal engine exploring collision detection, gravity, and core game mechanics.",
-        "icon": "/portfo/svg/physics.svg"
+        "icon": "/portfo/svg/physics.svg",
+        "priority": true
       }
     ]
   },
@@ -86,13 +91,13 @@
       {
         "title": "t2t – Omegle Clone",
         "description": "Real-time video/text web app built with React and WebRTC.",
-        "icon": "/portfo/svg/omagale.svg",
+        "icon": "/portfo/svg/omegle.svg",
         "link": "https://github.com/Nithin-3/t2t",
         "linkTitle": "GitHub"
       },
       {
         "title": "Checker – Staff Availability Tool",
-        "description": "ML face recognition · Captures every 15min · ffmpeg compression · Cloud backend.\nIntegrated with Civil Engineering Tools app.",
+        "description": "ML face recognition · Captures every 15 min · FFmpeg compression · Cloud backend.\nIntegrated with Civil Engineering Tools app.",
         "icon": "/portfo/svg/checker.svg",
         "link": "https://github.com/HITMAN-AK/private_checker/",
         "linkTitle": "GitHub"
@@ -120,18 +125,26 @@
 
   {
     "title": "Linux Tools",
-    "description": "Lightweight C utilities for Wayland desktops — no external dependencies.",
+    "description": "Open-source Linux daemons and C utilities — system-level tools built for Wayland desktops.",
     "icon": "/portfo/svg/linux.svg",
     "branch": [
       {
+        "title": "ozhium-ollium",
+        "description": "Linux daemon that monitors system events and renders a GTK4 overlay UI for real-time feedback.\nBrightness · Volume · Battery · Network · Bluetooth · Custom command hooks on state change.",
+        "icon": "/portfo/svg/echo.svg",
+        "link": "https://github.com/Nithin-3/ozhium-ollium",
+        "linkTitle": "GitHub",
+        "opensource": true
+      },
+      {
         "title": "Echo-Meter",
-        "description": "OSD controller for brightness, volume, and microphone.\nPure C · No external deps · Great for tiling WMs.",
+        "description": "OSD controller for brightness, volume, and microphone.\nPure C · No external dependencies · Great for tiling window managers.",
         "icon": "/portfo/svg/echo.svg",
         "link": "https://github.com/Nithin-3/echo-meter",
         "linkTitle": "GitHub"
       },
       {
-        "title": "shell-shript",
+        "title": "Shell-Shript",
         "description": "Reverse shell demonstrating RAT capabilities using raw sockets.\nRemote access over networks.",
         "icon": "/portfo/svg/terminal.svg",
         "link": "https://github.com/Nithin-3/Shell-Shript",
@@ -167,7 +180,7 @@
       },
       {
         "title": "Specializations",
-        "description": "Machine Learning\nLinux & system tools\nSteganography",
+        "description": "Machine Learning\nLinux & System Tools\nSteganography",
         "icon": "/portfo/svg/tools.svg"
       }
     ]
@@ -180,7 +193,7 @@
     "branch": [
       {
         "title": "B.Tech AI & ML",
-        "description": "K Ramakrishnan College Of Technology\nGraduated 05/2025 — Trichy, India",
+        "description": "K Ramakrishnan College of Technology\nGraduated 05/2025 — Trichy, India",
         "icon": "/portfo/svg/degree.svg"
       }
     ]
