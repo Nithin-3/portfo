@@ -200,6 +200,7 @@ export default function Portfo() {
                         <a href="tel:+917639824119"> +91 7639824119</a><br />
                         <a href="https://github.com/Nithin-3" target="_blank" rel="noopener noreferrer"> Github Profile</a>
                     </div>
+	    <a href='/portfo/Nithin_Resume .pdf' download className="resume-download">capture my resume</a>
                 </div>
             </div>
         </div>
