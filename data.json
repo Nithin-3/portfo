@@ -15,6 +15,13 @@
         "icon": "/portfo/svg/linux.svg"
       },
       {
+        "title": "no-name(RBNC)",
+        "description": "RBNC is a from-scratch rollback netcode featuring state rollback, frame prediction, and input validation",
+        "icon": "/portfo/svg/physics.svg",
+        "link": "https://github.com/Nithin-3/rbnc",
+        "linkTitle": "GitHub"
+      },
+      {
         "title": "Physics Engine Learning",
         "description": "Building a physics engine from scratch — collisions, forces, gravity, core game mechanics.",
         "icon": "/portfo/svg/physics.svg"
